@@ -31,6 +31,63 @@
             font-size: 16px;
             color:#052855;
         }
+        
+        .column{
+            display: flex;
+            flex-direction: row;
+            padding:64px 120px;
+            /* background-color: pink; */
+            justify-content: space-between;
+        }
+        .column_rev{
+            display: flex;
+            flex-direction: row-reverse;
+            padding:64px 100px;
+            /* background-color: pink; */
+            justify-content: space-between;
+        }
+
+        
+        .column .s1_info        
+        {
+            width:55%; 
+                       
+        }
+
+        .column_rev .s1_info
+        {
+            width:55%;
+            
+        }
+       
+        
+         .column .s1_info_pic
+         {
+            width:45%;     
+        }
+        .column_rev .s1_info_pic{
+            width:45%;
+        }
+
+
+
+        .column .s1_info_pic img
+        {
+            width: 350px;
+            height: 300px;
+            margin-left: 100px;
+            margin-top:50px;            
+        }     
+
+        .column_rev .s1_info_pic img
+        {
+            width: 350px;
+            height: 300px;
+            margin-left: 1px;
+            margin-top:50px;            
+        }     
+
+       
 
         h3{
             font-weight: bold;
@@ -42,40 +99,6 @@
             margin-bottom:24px;
             font-size: 16px;
         }
-        
-        .column{
-            display: flex;
-            flex-direction: row;
-            padding:64px 120px;
-            /* background-color: pink; */
-            justify-content: space-between;
-        }
-        
-        .column .s1_info{
-            width:55%;
-            
-        }
-        .column_rev .s1_info{
-            width:55%;
-            
-        }
-        
-        .column .s1_info_pic,
-        .column_rev .s1_info_pic
-        {
-            width:45%;     
-        }
-
-
-        .column .s1_info_pic img,
-        .column_rev .s1_info_pic img
-        {
-            width: 350px;
-            height: 300px;
-            margin-left: 100px;
-            margin-top:50px;            
-        }          
-
 
         .s1_info ul{
             display:flex;
@@ -91,17 +114,18 @@
            flex-direction: column;
            align-items:flex-start;
            margin-top: 40px;
-           color:#0061ff;            
+           color:#0061ff;
+            
         }
-
-       
+        
         .column .s1_info ul li,
-        .column_rev .s1_info ul li        
+        .column_rev .s1_info ul li
         {
             width:calc(50% - 7px);            
             margin-bottom:8px ;
             font-weight: 500;        
-        }         
+        }   
+       
 
         .column .s1_info ul li:before,
         .column_rev .s1_info ul li:before
@@ -116,8 +140,8 @@
             top:11px;
             display: inline-block;
             margin-right: 10px;            
-        }           
-
+        }
+      
         .more-item{
             display:flex;
             flex-wrap: wrap;            
@@ -125,7 +149,7 @@
 
         .more-item .item{
             width:350px;
-            margin:20px 0 0;           
+            margin:20px 0 0;         
             padding:0 0 0 50px;
         }
 
@@ -151,10 +175,6 @@
             text-align: center;
             padding:60px 0 0 0;
         }         
-
-        /* .column :nth-child(even){
-            flex-direction:row-reverse ;
-        } */
 
     </style>
 </head>
@@ -190,7 +210,7 @@
         </div>        
     </div>
 
-    <div class="column">
+    <div class="column_rev">
         <div class="s1_info">
             <h3>
                 支持海內外電商<br>
@@ -236,7 +256,7 @@
         </div>        
     </div>
 
-    <div class="column">
+    <div class="column_rev">
         <div class="s1_info">
             <h3>
                 「社群+電商」輕鬆開賣
