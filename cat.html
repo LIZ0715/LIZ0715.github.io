@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            ;
+        }
+
+        .contact {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .icon-list {
+            display: flex;
+            margin: auto;
+            margin-right: 0;
+        }
+
+        .icon-list .icon {
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            margin-right: 5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-text p {
+            display: inline;
+        }
+
+        .phone-num {
+            display: flex;
+            line-height: 50px;
+        }
+
+        .phone-icon {
+            margin-right: 8px;
+        }
+
+        .phone-text {
+            color: aliceblue;
+        }
+
+        .phone-text a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .head {
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            height: 100px;
+        }
+
+        .head .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -50px;
+        }
+
+        .head .logo-name a {
+            text-decoration: none;
+            color: #535353;
+            font-size: 45px;
+            font-weight: 700;
+            font-family: serif;
+            line-height: 1;
+
+        }
+
+        .head .logo-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -100px;
+        }
+
+        .head .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head .navbar a {
+            text-decoration: none;
+            color: #000000;
+            font-family: sans-serif;
+            margin: 20px;
+            font-size: 16px;
+        }
+
+        .donate-btn {
+            height: 40px;
+            width: 150px;
+            border: 2px solid #fa0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 5px 30px 0px;
+        }
+
+        .donate-btn a {
+            text-decoration: none;
+            color: #fa0;
+        }
+
+        .banner {
+            /* background-color: gray; */
+            width: 100%;
+            height: 500px;
+            background-image: url(/cat_pic/asset\ 4.jpeg);
+            background-size: cover;
+        }
+
+        .banner .banner-text .Animals {
+            font-size: 34px;
+            color: #535353;
+        }
+
+        .banner .banner-text .Your {
+            font-size: 60px;
+            color: #7abee9;
+        }
+
+        .banner .banner-text .You {
+            font-size: 17px;
+            color: #535353;
+        }
+
+        .banner .banner-text {
+            display: inline-block;
+            margin-top: 200px;
+            margin-left: 70px;
+            line-height: 1.2;
+        }
+
+        .banner-btn {
+            height: 50px;
+            width: 160px;
+            background-color: #fa0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 5px 30px 70px;
+        }
+
+        .banner-btn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .about-us{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-us-text h1{
+           font-size: 40px;
+           font-weight: 800;
+           color:#535353;
+        }
+
+        .about-us-text h2{
+            font-size: 30px;
+            font-weight: 700;
+            color:#7abee9;
+        }
+        .about-us-text p{
+            color:#8d8d8d;
+            line-height: 1.5;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .about-us-text a{
+            display: inline-block;
+            text-decoration: none;
+            background-color: #fa0;
+            padding:20px 30px 20px 30px;
+            margin-top:30px;
+            color:white;
+            
+        }
+
+        .how{
+            background-color:#292121;
+            width:100%;
+        }
+        .how-title{
+            text-align: center;
+            display: block;
+            background-color: #f9f9f9;
+            height:200px;                      
+        }
+
+        .how-title h1{
+            padding-top:60px;
+            font-size: 40px;
+            text-align: center;
+            color: #535353;
+        }
+
+        .how-title h2{
+            font-size: 30px;
+            margin: 0 0 50px 0;
+            color: #7abee9;
+        }
+        .how-column{
+            /* height:500px; */
+            background-color:#f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item1,
+        .item2,
+        .item3{
+            /* border:1px solid rgb(24, 24, 24); */
+            margin:10px;
+            padding-top:400px;
+            width:350px;
+          
+        }
+         .item1{
+            background-image: url(/cat_pic/asset\ 5.jpeg);
+            display: block;
+            }
+        
+        .item2{
+            background-image: url(/cat_pic/asset\ 6.jpeg);
+        }
+        .item3{
+            background-image: url(/cat_pic/asset\ 7.jpeg);
+        } 
+
+       
+        
+        .item1 a,
+        .item2 a,
+        .item3 a{
+            text-decoration: none;
+            /* border:1px solid red; */
+            display: flex;
+            justify-content: center;
+            padding-bottom: 30px;
+            font-size:25px ;
+            color:white;
+        }
+            
+    </style>
+</head>
+
+<body>
+    <div class="contact">
+        <div class="phone-num">
+            <div class="phone-icon">
+                <i class="fa-solid fa-phone" style="color: #ffde05;"></i>
+            </div>
+            <div class="phone-text">
+                <p>Toll-free：</p>
+                <a href="#">(123)456-7890</a>
+            </div>
+        </div>
+        <div class="icon-list">
+            <div class="icon">
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-pinterest-p"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="head">
+        <div class="logo">
+            <a href=""><img src="/cat_pic/asset 0.png" alt="Anilove-logo">
+            </a>
+        </div>
+        <div class="logo-name">
+            <a href="#">Anilove</a>
+        </div>
+        <div class="navbar">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Events</a>
+                <a href="#">News</a>
+                <a href="#">Contacts</a>
+            </nav>
+        </div>
+        <div class="donate-btn">
+            <a href="">DONATE NOW!</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-text">
+            <p class="Animals">Animals Need</p>
+            <h1 class="Your">YOUR Help!</h1>
+            <p class="You">You can chip in with money & effort!</p>
+        </div>
+        <div class="banner-btn">
+            <a href="">DONATE NOW!</a>
+        </div>
+    </div>
+
+    <div class="about-us">
+        <div class="about-us-img">
+            <img src="/cat_pic/asset 1.jpeg" alt="">
+        </div>
+        <div class="about-us-text">
+            <h1>About US</h1>
+            <h2>What Makes Us Care About Pets?</h2>
+            <p>If it wasn't for our founder's childhood spent on a ranch in northern Texas, surrounded by domestic
+                animals and pets all the time till she went to college – there might have been no Anilove animal
+                shelter now. So as soon as she graduated with her Veterinary degree 12 years ago, she already knew
+                what she will be doing for a living.<br><br>
+                All in all, with thousands of animals saved off the streets and cared for every year, we hope to
+                encourage much more pet adoptions to happen!
+            </p>            
+            <a href="#">LEARN MORE</a>
+        </div>
+    </div>
+
+    <div class="how">
+        <div class="how-title">
+            <h1>How You Can Help</h1>
+            <h2>There Are Countless Ways You Can Join In&Help Us!</h2>
+        </div>
+        <div class="how-column">
+            <div class="item1">
+                <div class="item">
+                    <a href="">Volunteer</a>
+                </div>
+            </div>
+            <div class="item2">
+                <div class="item">
+                    <a  href="">Adopt</a>
+                </div>
+            </div>
+            <div class="item3">
+                <div class="item">
+                    <a  href="">Sponsor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
