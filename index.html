@@ -6,15 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      
+        body{
+            background-color:#d8f2da;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            color:black;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        h1{
+            background-color:black;
+            color:#d8f2da;
+            width:fit-content;
+            padding:20px;
+        }
+
+        a::before{
+            content:'●';
+            margin-right:10px;
+        }
+        a:hover::after{
+            content:'';
+            display:block;
+            height:3px;
+            width:300px;
+            background-color: green;
+            margin-top:10px;
+        }
     </style>
 </head>
 <body>
-    <h1>林雨慈的作業</h1>
+    <h1>林雨慈の作業</h1>
     <div class="myhw">
-        <a href="./table/HW1.html">作業1-表格</a><br>
-        <a href="./cat.html">作業2-貓咪切版</a><br>
-        <a href="./HW3_shopline/shopline.html">作業3-Shopline切版</a>
+        
+        <a href="./table/HW1.html">作業1 – 表格</a>
+        <a href="./cat.html">作業2 – 貓咪切版</a>
+        <a href="./HW3_shopline/shopline.html">作業3 – Shopline切版</a>
 
     </div>
     
