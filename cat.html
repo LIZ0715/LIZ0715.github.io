@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <style>
         * {
             margin: 0;
@@ -28,7 +27,7 @@
         .icon-list {
             display: flex;
             margin: auto;
-            margin-right: 0;
+            margin-right: 70px;
         }
 
         .icon-list .icon {
@@ -40,6 +39,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
+        }
+
+        .icon-list .icon:hover{
+            background-color: #ff9933;
         }
 
         .phone-text p {
@@ -52,7 +56,8 @@
         }
 
         .phone-icon {
-            margin-right: 8px;
+            margin-right: 10px;
+            margin-left:75px;
         }
 
         .phone-text {
@@ -75,7 +80,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: -50px;
+            margin-right: -30px;
         }
 
         .head .logo-name a {
@@ -107,12 +112,17 @@
             font-family: sans-serif;
             margin: 20px;
             font-size: 16px;
-        }
+            border-bottom:3px solid transparent;
+            display:inline;
+        
+        }   
+
+        
 
         .donate-btn {
             height: 40px;
             width: 150px;
-            border: 2px solid #fa0;
+            border: 2px solid #ff9933;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -121,7 +131,15 @@
 
         .donate-btn a {
             text-decoration: none;
-            color: #fa0;
+            color: #ff9933;
+        }
+        .donate-btn:hover{
+            background-color: #7abee9;
+            border:none;
+        }
+
+        .donate-btn a:hover{
+            color:white;
         }
 
         .banner {
@@ -149,19 +167,22 @@
 
         .banner .banner-text {
             display: inline-block;
-            margin-top: 200px;
+            margin-top: 140px;
             margin-left: 70px;
             line-height: 1.2;
         }
 
         .banner-btn {
-            height: 50px;
-            width: 160px;
-            background-color: #fa0;
+            height: 70px;
+            width: 200px;
+            background-color: #ff9933;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 30px 5px 30px 70px;
+        }
+        .banner-btn:hover{
+            background-color: black;
         }
 
         .banner-btn a {
@@ -178,29 +199,38 @@
            font-size: 40px;
            font-weight: 800;
            color:#535353;
+           margin-bottom: 10px;
         }
 
         .about-us-text h2{
             font-size: 30px;
             font-weight: 700;
             color:#7abee9;
+            margin-bottom: 20px;
         }
         .about-us-text p{
             color:#8d8d8d;
             line-height: 1.5;
             font-family: sans-serif;
             font-size: 14px;
+            margin-right:10px;
         }
 
-        .about-us-text a{
+        .about-us-text .learn-more-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #fa0;
-            padding:20px 30px 20px 30px;
-            margin-top:30px;
-            color:white;
-            
+            background-color: #ff9933;
+            height:70px;
+            width:200px;
+            color:white;   
+            text-align: center;
+            line-height: 70px;   
+            margin-top:50px;      
         }
+        .about-us-text .learn-more-btn:hover{
+            background-color: black;
+        }
+       
 
         .how{
             background-color:#292121;
@@ -264,9 +294,16 @@
             display: flex;
             justify-content: center;
             padding-bottom: 30px;
-            font-size:25px ;
+            font-size:30px ;
             color:white;
         }
+
+        .item1 a:hover,
+        .item2 a:hover,
+        .item3 a:hover{
+            color:#ff9933;
+        }
+
             
     </style>
 </head>
@@ -345,7 +382,7 @@
                 All in all, with thousands of animals saved off the streets and cared for every year, we hope to
                 encourage much more pet adoptions to happen!
             </p>            
-            <a href="#">LEARN MORE</a>
+            <a class="learn-more-btn" href="#">LEARN MORE</a>
         </div>
     </div>
 
