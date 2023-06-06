@@ -1,0 +1,173 @@
+*{
+  margin:0;
+  padding:0;  
+}
+/* .wrap{
+  max-width:100%;
+  height:auto;
+  border:5px solid blue;
+} */
+section{
+  max-width:1200px;
+  /* border:5px solid red; */
+  margin:auto;
+  margin-top:100px;
+
+}
+.gray-part{
+  width:500px;
+  height:250px;
+  background-color:#eeee;
+  opacity: 0.6;
+  position: relative;
+  left:600px;
+  top:50px;
+}
+.main-part{
+  position:relative;
+  top:-220px;
+  left:10px
+}
+.pic img{
+  display:block;
+  margin:auto;
+  margin-top:100px;
+
+}
+.pic{
+  position:relative;
+}
+
+i{
+  font-size: 50px;
+}
+.yt-btn{
+  position:absolute;
+  left:77%;
+  top:180px;
+  
+}
+
+.second .yt-btn,
+.fourth .yt-btn{
+  position:absolute;
+  left:217px;
+}
+
+
+.introduction{
+  /* border:2px solid black; */
+  width:350px;
+  position:absolute;
+  top:-100px;
+  left:100px;
+  text-align: center;
+  color:white;
+}
+
+.second .introduction,
+.fourth .introduction{
+  width:350px;
+  position:absolute;
+  top:-150px;
+  left:800px;
+  text-align: center;
+  color:white;
+}
+
+
+.title-01{
+  background-color:red;
+  padding:10px;
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+span{
+  writing-mode: vertical-lr;
+  font-size: 100px;  
+}
+h1{
+  font-size: 50px;
+}
+.content-01{
+  background-color:black;
+  padding:10px;
+  
+}
+.content-01 p{
+  margin-top:10px;
+  text-align: justify;
+}
+
+
+.revolution-text{
+  /* border:1px solid red; */
+  width:700px;
+  padding:10px;
+  background-color: #e6e6e6;
+  position:absolute;
+  top:355px;
+  left:50px;
+}
+
+.second .revolution-text,
+.fourth .revolution-text{
+  width:700px;
+  padding:10px;
+  background-color: #e6e6e6;
+  position:absolute;
+  top:355px;
+  left:450px;
+}
+.revolution-text h2::after{
+  content:'';
+  display:inline-block;
+  background-color:rgb(223, 31, 31);
+  width:448px;
+  height:1px;  
+  margin-bottom:7px;
+  margin-left:5px;
+}
+
+.revolution-text h2{
+  /* border:1px solid red; */
+  color:rgb(223, 31, 31);
+  margin-bottom: 10px;
+}
+.revolution-text h3{
+  display:inline-block;
+  color:white;
+  background-color: black;
+  margin-bottom: 2px;
+  padding:3px;
+}
+.revolution-text p{
+  margin-bottom: 10px;
+  text-indent: -1.2em;
+  margin-left:25px;
+
+}
+.revolution-text p::before{
+  content:'';
+  display: inline-block;
+  width:8px;
+  height:8px;
+  background-color:rgb(223, 31, 31);
+  /* margin-left:10px; */
+  margin-right:10px;
+
+  
+
+}
+
+
+
+
+
+
+
+
+
