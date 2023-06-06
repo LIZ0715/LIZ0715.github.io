@@ -18,30 +18,36 @@
         }
 
         .head-help {
+            max-width: 100%;
             background-color: #f7f8f9;
-            padding: 64px 40px;
+            padding: 64px;
             text-align: center;
-        }
-
-        .head-help p {
-            margin-top: 30px;
+            line-height: 1.5;
         }
 
         .column {
+            max-width: 100%;
             display: flex;
             flex-direction: row;
-            margin:50px;
-            /* margin: 50px 120px; */
             justify-content: center;
-            align-items: center;
+            margin-top: 50px;
+
         }
-        .text-2{
-            margin-left:30px;
+
+        .column .text {
+            max-width: 50%;
+            margin: 10px;
+        }
+
+        .column .pic {
+            max-width: 50%;
+            margin: 10px;
         }
 
         .column:nth-child(even) {
             flex-direction: row-reverse;
         }
+
 
         h3 {
             font-weight: bold;
@@ -57,9 +63,12 @@
 
         ul {
             list-style-type: none;
+            /* display: flex;
+            flex-wrap: wrap; */
+            width: 100%;
+            /* border:1px solid red; */
             display: flex;
             flex-wrap: wrap;
-            width: 100%
         }
 
         li::before {
@@ -73,66 +82,84 @@
             width: 50%;
             margin-bottom: 8px;
             font-weight: 500;
+            /* border:1px solid red; */
+            box-sizing: border-box;
         }
 
         a {
             display: block;
+            text-decoration: none;
             margin-top: 30px;
             color: #0061ff;
-            text-decoration: none;
         }
 
-        .text-1 a::after {
+
+        a::after {
             content: '';
             display: block;
+            width: 100px;
             height: 2px;
-            width: 95px;
-            background-color: blue;
-            margin-top:10px;
+            background-color: #0061ff;
+
         }
 
-        .text-2 a::after {
+        .a2::after {
             content: '';
             display: block;
-            height: 2px;
-            width: 115px;
-            background-color: blue;
-            margin-top:10px;
-        }
-
-        .text-3 a::after {
-            content: '';
-            display: block;
-            height: 2px;
             width: 110px;
-            background-color: blue;
-            margin-top:10px;
+            height: 2px;
+            background-color: #0061ff;
+
         }
 
-        .text-4 a::after {
+        .a3::after {
             content: '';
             display: block;
+            width: 110px;
             height: 2px;
-            width: 145px;
-            background-color: blue;
-            margin-top:10px;
+            background-color: #0061ff;
+
         }
 
-        .text-5 a::after {
+        .a4::after,
+        .a5::after {
             content: '';
             display: block;
-            height: 2px;
             width: 145px;
-            background-color: blue;
-            margin-top:10px;
+            height: 2px;
+            background-color: #0061ff;
 
         }
-      
+
+
+        a:hover i {
+            transition: 0.5s;
+            padding-left: 10px;
+        }
 
         .icon {
+            max-width: 100%;
             background-color: #f7f8f9;
-            width:100%;
+            text-align: center;
         }
+
+        .six-icon {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .item {
+            width: 30%;
+        }
+
+
+
+
+
 
         .icon-head {
             text-align: center;
@@ -141,19 +168,7 @@
             line-height: 150px;
         }
 
-        .six-icon {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            margin: 0px 55px;
-        }
 
-        .item {
-            width: 300px;
-            /* border:2px solid red; */
-            margin: auto;
-
-        }
 
         .item img {
             display: block;
@@ -176,7 +191,6 @@
 </head>
 
 <body>
-
     <div class="head-help">
         <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
         <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE助你賣得更多、賣得更好 </p>
@@ -184,7 +198,7 @@
 
     <div class="wrap">
         <div class="column">
-            <div class="text-1">
+            <div class="text">
                 <h3>
                     免寫程式、多款版型<br>
                     輕鬆打造全能電商網站
@@ -200,15 +214,16 @@
                     <li>開放HTML/CSS編輯</li>
                     <li>一頁商店</li>
                 </ul>
-                <a href="#">看看開店祕技→</a>
+
+                <a class="a1" href="#">看看開店祕技<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="pic-1">
+            <div class="pic">
                 <img src="/HW3_shopline/shopline_pic/shopline 1.webp" alt="輕鬆打造全能電商網站">
             </div>
         </div>
 
         <div class="column">
-            <div class="text-2">
+            <div class="text">
                 <h3>
                     支持海內外電商<br>
                     金流、物流一次搞定
@@ -224,15 +239,15 @@
                     <li>超商代碼／條碼繳費</li>
                     <li>發票開立與串接</li>
                 </ul>
-                <a href="#">了解更多金物流→</a>
+                <a class="a2" href="#">了解更多金物流<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="pic-2">
+            <div class="pic">
                 <img src="/HW3_shopline/shopline_pic/shopline 2.webp" alt="輕鬆打造全能電商網站">
             </div>
         </div>
 
         <div class="column">
-            <div class="text-3">
+            <div class="text">
                 <h3>
                     刺激下單，創造回購<br>
                     行銷導流、促購模組任你玩
@@ -248,15 +263,15 @@
                     <li>會員分級／點數／購物金</li>
                     <li>FB／Google／LINE 廣告追蹤</li>
                 </ul>
-                <a href="#">看更多優惠模組→</a>
+                <a class="a3" href="#">看更多優惠模組<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="pic-3">
+            <div class="pic">
                 <img src="/HW3_shopline/shopline_pic/shopline 3.webp" alt="輕鬆打造全能電商網站">
             </div>
         </div>
 
         <div class="column">
-            <div class="text-4">
+            <div class="text">
                 <h3>
                     「社群+電商」輕鬆開賣<br>
                     打造一致的社群購物體驗
@@ -272,15 +287,15 @@
                     <li>自訂聊天機器人腳本</li>
                     <li>訊息整合中心</li>
                 </ul>
-                <a href="#">看更多社群購物功能→</a>
+                <a class="a4" href="#">看更多社群購物功能<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="pic-4">
+            <div class="pic">
                 <img src="/HW3_shopline/shopline_pic/shopline 4.webp" alt="輕鬆打造全能電商網站">
             </div>
         </div>
 
         <div class="column">
-            <div class="text-5">
+            <div class="text">
                 <h3>
                     OMO 全通路無縫整併<br>
                     輕鬆管理網店、門市以及其他通路
@@ -296,9 +311,9 @@
                     <li>門市快速集客工具</li>
                     <li>Smart OMO 會員導購工具</li>
                 </ul>
-                <a href="#">了解更多全通路整合→</a>
+                <a class="a5" href="#">了解更多全通路整合<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="pic-5">
+            <div class="pic">
                 <img src="/HW3_shopline/shopline_pic/shopline 5.webp" alt="輕鬆打造全能電商網站">
             </div>
         </div>
@@ -344,6 +359,7 @@
             </div>
         </div>
     </div>
+
 
 
 </body>
