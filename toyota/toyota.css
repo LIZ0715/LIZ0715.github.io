@@ -163,8 +163,8 @@ h1{
 .revolution-text p::before{
   content:'';
   display: inline-block;
-  width:8px;
-  height:8px;
+  width:5px;
+  height:5px;
   background-color:rgb(223, 31, 31);
   margin-right:10px;
   margin-bottom:1px;
