@@ -61,7 +61,7 @@ i{
   position:absolute;
   top:-100px;
   left:100px;
-  text-align: center;
+  /* text-align: center; */
   color:white;
 }
 
@@ -71,7 +71,7 @@ i{
   position:absolute;
   top:-150px;
   left:800px;
-  text-align: center;
+  /* text-align: center; */
   color:white;
 }
 
@@ -167,7 +167,6 @@ h1{
   
 
 }
-
 
 
 
