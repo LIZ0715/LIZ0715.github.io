@@ -2,25 +2,25 @@
   margin:0;
   padding:0;  
 }
-/* .wrap{
-  max-width:100%;
-  height:auto;
-  border:5px solid blue;
-} */
-section{
+
+.wrap{
   max-width:960px;
   /* border:5px solid red; */
   margin:auto;
-  margin-top:100px;
 
 }
+.card{
+  margin-top:100px;
+  border:3px solid red;
+}
+
 .gray-part{
   width:500px;
   height:250px;
   background-color:#eeee;
   opacity: 0.6;
   position: relative;
-  left:460px;
+  left:455px;
   top:30px;
   
 }
@@ -50,9 +50,8 @@ i{
   
 }
 
-.second .yt-btn,
-.fourth .yt-btn{
-  position:absolute;
+
+.wrap .card:nth-child(even) .yt-btn{
   left:95px;
 }
 
@@ -68,24 +67,25 @@ i{
   
 }
 
-.second .introduction,
-.fourth .introduction{
+
+
+.wrap .card:nth-child(even) .introduction{
   width:350px;
   position:absolute;
   top:-130px;
-  left:600px;
+  left:595px;
   /* text-align: center; */
   color:white;
 }
 
 
-.title-01{
+.title{
   background-color:rgb(197, 25, 25);;
-  padding:0px;
   font-weight: bold;
   display:flex;
   justify-content: center;
   align-items:center;
+  
 }
 
 span{
@@ -93,16 +93,19 @@ span{
     font-size: 100px;  
     font-weight: lighter;
 }
+
 h1{
-  font-size: 50px;
+  display:inline;
+  font-size:50px;
   font-weight: lighter;
+  
 }
-.content-01{
+.content{
   background-color:black;
   padding:20px;
   
 }
-.content-01 p{
+.content p{
   margin-top:10px;
   text-align: justify;
   line-height: 2;
@@ -119,17 +122,15 @@ h1{
   left:-10px;
 }
 
-
-
-.fourth .revolution-text,
-.second .revolution-text{
+.wrap .card:nth-child(even) .revolution-text{
   width:600px;
   padding:10px;
   background-color: #e6e6e6;
   position:absolute;
   top:355px;
-  left:330px;
+  left:325px;
 }
+
 .revolution-text h2::after{
   content:'';
   display:inline-block;
@@ -169,9 +170,6 @@ h1{
   background-color:rgb(223, 31, 31);
   margin-right:10px;
   margin-bottom:1px;
-
-  
-
 }
 
 
