@@ -98,11 +98,13 @@ h1{
   font-weight: lighter;
   
 }
+
 .content{
   background-color:black;
   padding:20px;
   
 }
+
 .content p{
   margin-top:10px;
   text-align: justify;
