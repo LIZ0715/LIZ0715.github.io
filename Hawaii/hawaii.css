@@ -186,6 +186,20 @@ a{
         cursor:pointer;
     }
 
+    .banner{
+        transition:opacity 0.5s ease;
+    }
+    .item{
+        transition: opacity 0.5s ease;
+    }
+    .banner:hover{
+        opacity: 0.8;
+    
+    }
+
+    .item:hover{
+        opacity: 0.8;
+    }
   
 }
 
