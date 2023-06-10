@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: YakuHanJP, "游ゴシック Medium", YuGothic, YuGothicM, "Noto Sans Japanese", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.group{
+    margin:auto;
+}
+
+.group-head{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100px;
+    /* border: 1px solid red; */
+}
+.group-head .title{
+    margin-left:10px;
+    font-size: 20px;
+}
+.group-head .title span{
+    font-size: 12px;
+}
+.group-head .more-info{
+    margin-right:10px;
+    
+}
+.group-head .more-info a{
+    
+    /* border:1px solid red; */
+    text-decoration: none;
+    color:#f65936;
+    font-weight: bold;
+    display:flex;
+}
+.more-info i{
+    width: 20px;
+    height: 20px;
+    /* background-color:#f65936; */
+    margin-right: 10px;
+    border-radius: 50%;
+    border:2px solid #f65936;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.banner .banner-pic img{
+    width:100%;
+}
+.banner-text{
+    margin-left:30px;
+    margin-right:30px;
+}
+.banner{
+    /* border:1px solid orange; */
+}
+.date{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size: 10px;
+}
+
+.column-list{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    /* border:1px solid blue; */
+    justify-content: center;
+    gap:10px;
+}
+.column{
+    width: 40%;
+    box-sizing: border-box;
+    margin:10px;
+    /* border:1px solid red; */
+    
+}
+
+.column .pic img{
+    width:100%;
+    max-height:400px;
+    border-radius: 5px;
+    height:100px;
+}
+
+.icon-list .pic img{
+    width:20px;
+    height:auto;
+
+}
+.column .icon-list{
+    display:flex;
+}
+.column .icon-list .text{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 2;
+    color:#202124 ;  
+}
+
+
+.border{
+    background-color:gainsboro;
+    height:1px;
+    width:95%;
+}
+
+/* 平板 */
+@media screen and (min-width: 768px) and (max-width: 1200px),
+       screen and (min-width: 1200px) {
+
+
+    .group{
+        margin:0 20px;
+    }
+    .group-head .title h3{
+        display:inline;
+    }
+    .group-head .title{
+        margin-left:30px;
+    }
+    .group-head .more-info{
+        margin-right:30px;
+    }
+
+    .group-head .title{
+        margin-right:30px;
+    }
+   
+    .wrap{
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+        justify-content: space-around;        
+        margin:10px;
+    }
+    .banner{
+        width:45%;        
+    }
+    .banner-text{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        margin-left:0px;
+        margin-right:0px;
+    }
+
+    .banner-text .title{
+        width:40%;
+  
+    }
+    .banner-text .content{
+        width:50%;
+        font-size: 12px;
+    }
+    .banner .banner-pic img{
+        border-radius: 5px;
+    }
+    
+    .content-date{
+        display:block;
+        margin-top:10px;
+    }
+    .column-list{
+        width:50%;
+        gap:25px;
+    }
+
+    .wrap1{
+        flex-direction: row-reverse;
+    }
+   
+
+  
+}
+
+   
+ 
+
+
+
+
+
