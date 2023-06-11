@@ -9,22 +9,15 @@
     <style>
         .group {
             border: 2px solid black;
-            width: fit-content;
             margin: auto;
-            padding: 20px;
+            padding: 10px;
             background-color:#fa0 ;
             border-radius: 20px;
+            width:300px;
         }
 
-        input {
-            display: block;
-            margin-bottom: 20px;
-        }
+      
 
-        .button {
-            display: flex;
-            justify-content: space-between;
-        }
 
         button{
             border-radius: 10px;
@@ -32,6 +25,43 @@
         button:hover{
             background-color:orangered;
         }
+
+        .button_num{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            /* border:1px solid red; */
+            margin:auto;
+            margin-top:30px;
+        }
+        .number{
+            margin:15px;
+            width:50px;
+            height:50px;
+            font-size: 30px;
+        }
+
+        #reset{
+            width:45%;
+            /* height:200px; */
+        }
+        .input_wrapper{
+            display:flex;
+            justify-content: center;
+        }
+
+        #submit{
+            margin-left:10px;
+            width:60px;
+            height:50px;
+            
+        }
+        #look-ans{
+            margin-left:200px;
+        }
+
+        
+        
     </style>
 </head>
 
@@ -39,10 +69,27 @@
     <div class="group">
         <h1></h1>
         <h2></h2>
-        <input type="number" min="1" max="100" class="guessAns">
-        <div class="button">
-            <button id="reset"></button>
+        <div class="input_wrapper">
+            <input type="number" min="1" max="100" class="guessAns">
             <button id="submit"></button>
+        </div>
+        
+        <div class="button_num">
+            <button class="number number1">1</button>
+            <button class="number number2">2</button>
+            <button class="number number3">3</button>
+            <button class="number number4">4</button>
+            <button class="number number5">5</button>
+            <button class="number number6">6</button>
+            <button class="number number7">7</button>
+            <button class="number number8">8</button>
+            <button class="number number0">9</button>
+            <button class="number number0">0</button>
+            <button id="reset" class="number"></button>
+
+        </div>
+
+        <div class="btn_func">
             <button id="look-ans"></button>
         </div>
     </div>
@@ -65,20 +112,22 @@
         let btn1 = document.getElementById("reset");
         let btn2 = document.getElementById("submit");
         let btn3 = document.getElementById("look-ans");
+        let numberBtns = document.querySelectorAll(".number");
 
         function setGame() {
             h1.innerHTML = `<b>${titleName}</b>`;
             h1.style.textAlign = "center";
             h2.innerHTML = `請輸入${min}到${max}之間的數值`;
             h2.style.textAlign = "center";
-            input.style.width = "250px";
+            input.style.width = "50px";
             btn1.innerHTML = `Reset`;
             btn2.innerHTML = `Submit`;
             btn3.innerHTML = `Answer`;
-            btn1.style.height="25px"
             btn1.style.fontWeight="bold";
             btn2.style.fontWeight="bold";
             btn3.style.fontWeight="bold";
+            
+
         }
 
         function submit_btn() {
@@ -113,6 +162,11 @@
         btn3.addEventListener('click', function (event2) {
             alert(`答案是:${ans}`);
         })
+
+        numberBtns.forEach(btn=>{btn.addEventListener('click',function(){
+            let number=btn.innerText;
+            input.value+=number;
+        })})
     </script>
 </body>
 
