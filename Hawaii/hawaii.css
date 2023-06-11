@@ -121,6 +121,8 @@ a {
     font-size: 12px;
     line-height: 2;
     color: #202124;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
@@ -128,6 +130,10 @@ a {
     background-color: gainsboro;
     height: 1px;
     width: 100%;
+}
+
+.text{
+    line-height: 1.2;
 }
 
 /* 平板 */
