@@ -103,8 +103,8 @@
   
   .grid{
     display:grid;
-    grid-template-columns: repeat(4,48px) repeat(12, 48px) repeat(4, 48px);
-    grid-template-rows: repeat(9,96px);
+    grid-template-columns: repeat(20,48px);
+    grid-template-rows: repeat(8,96px);
   }
 
   .gray-part{
