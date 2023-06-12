@@ -11,57 +11,58 @@
             border: 2px solid black;
             margin: auto;
             padding: 10px;
-            background-color:#fa0 ;
+            background-color: #fa0;
             border-radius: 20px;
-            width:300px;
+            width: 300px;
         }
 
-      
 
 
-        button{
+
+        button {
             border-radius: 10px;
         }
-        button:hover{
-            background-color:orangered;
+
+        button:hover {
+            background-color: orangered;
         }
 
-        .button_num{
-            display:flex;
-            flex-wrap:wrap;
+        .button_num {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             /* border:1px solid red; */
-            margin:auto;
-            margin-top:30px;
+            margin: auto;
+            margin-top: 30px;
         }
-        .number{
-            margin:15px;
-            width:50px;
-            height:50px;
+
+        .number {
+            margin: 15px;
+            width: 50px;
+            height: 50px;
             font-size: 30px;
         }
 
-        #reset{
-            width:45%;
+        #reset {
+            width: 45%;
             /* height:200px; */
         }
-        .input_wrapper{
-            display:flex;
+
+        .input_wrapper {
+            display: flex;
             justify-content: center;
         }
 
-        #submit{
-            margin-left:10px;
-            width:60px;
-            height:50px;
-            
-        }
-        #look-ans{
-            margin-left:200px;
+        #submit {
+            margin-left: 10px;
+            width: 60px;
+            height: 50px;
+
         }
 
-        
-        
+        #look-ans {
+            margin-left: 200px;
+        }
     </style>
 </head>
 
@@ -73,7 +74,7 @@
             <input type="number" min="1" max="100" class="guessAns">
             <button id="submit"></button>
         </div>
-        
+
         <div class="button_num">
             <button class="number number1">1</button>
             <button class="number number2">2</button>
@@ -123,19 +124,19 @@
             btn1.innerHTML = `Reset`;
             btn2.innerHTML = `Submit`;
             btn3.innerHTML = `Answer`;
-            btn1.style.fontWeight="bold";
-            btn2.style.fontWeight="bold";
-            btn3.style.fontWeight="bold";
-            
+            btn1.style.fontWeight = "bold";
+            btn2.style.fontWeight = "bold";
+            btn3.style.fontWeight = "bold";
+
 
         }
 
         function submit_btn() {
             let guessAns = parseInt(input.value);
-            if (guessAns < ans && guessAns > min) {
+            if (guessAns < ans && guessAns >=min) {
                 min = guessAns;
                 h2.innerHTML = `請輸入${min}到${max}之間的數值`;
-            } else if (guessAns > ans && guessAns < max) {
+            } else if (guessAns > ans && guessAns <= max) {
                 max = guessAns;
                 h2.innerHTML = `請輸入${min}到${max}之間的數值`;
             } else if (guessAns === ans) {
@@ -163,10 +164,14 @@
             alert(`答案是:${ans}`);
         })
 
-        numberBtns.forEach(btn=>{btn.addEventListener('click',function(){
-            let number=btn.innerText;
-            input.value+=number;
-        })})
+      
+
+        for (let i = 0; i < numberBtns.length; i++) {
+            numberBtns[i].addEventListener('click', function () {
+                let number = numberBtns[i].innerText;
+                input.value += number;
+            });
+        }
     </script>
 </body>
 
