@@ -64,6 +64,7 @@ html{
     .col-lg-11 { width: 91.666666%;}
     .col-lg-12 { width: 100%;}
 }
+
 @media screen and (min-width: 1200px) {
     .col-xl-1 { width: 8.333333%;}
     .col-xl-2 { width: 16.666666%;}
