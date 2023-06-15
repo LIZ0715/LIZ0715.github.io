@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        @media screen and (min-width: 1200px) {
+            .row :first-child .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .row :first-child .card .text{
+                margin-left:10px;
+            }
+            .row :first-child .card .text,
+            .row :first-child .card .pic{
+                width:50%;
+            }
+            .row :nth-child(5) .card,
+            .row :nth-child(6) .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .row :nth-child(5) .card .text,
+            .row :nth-child(5) .card .pic,
+            .row :nth-child(6) .card .text,
+            .row :nth-child(6) .card .pic{
+                width:50%;
+            }
+
+            .row :nth-child(5) .card .text,
+            .row :nth-child(6) .card .text{
+                margin-left:10px;
+            }
+
+        }
+
+        .card {
+            outline: 1px solid gray;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .text{
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3 col-xl-12">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=910">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 col-xl-4">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=108">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 col-xl-4">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=1300">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 col-xl-4">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=101">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 col-xl-6">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=120">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 col-xl-6">
+                <div class="card">
+                    <div class="pic">
+                        <img src="https://picsum.photos/300/200/?random=130">
+                    </div>
+                    <div class="text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur sequi consequuntur, modi
+                            explicabo deserunt autem sit nihil velit perferendis labore?</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
