@@ -4,6 +4,8 @@
     font-family: YakuHanJP, "游ゴシック Medium", YuGothic, YuGothicM, "Noto Sans Japanese", sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
+.group-head{}
 a{
     text-decoration: none;
     color: #202124;
@@ -23,7 +25,7 @@ a{
     padding-right:10px;
 }
 .main-pic img{
-    border-radius: 10px;
+    border-radius: 20px;
     width:100%;
     cursor: pointer;
 }
@@ -190,10 +192,7 @@ a{
         margin-right:30px;
     } */
 
-    .group-head{
-        width:1200px;
-        margin:auto;
-    }
+    
 }
 
 
