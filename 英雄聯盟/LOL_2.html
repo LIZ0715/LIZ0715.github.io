@@ -2164,43 +2164,21 @@
 
     <script>
 
-        // let container;
+
+        let heroArray = [];
+        let heroTitles=["英雄名字","英雄描述","英雄圖片"]
+        let container;
         let btnCreateHeroArray, btnListHero, btnTableHero;
-
-        const heroArray = [];
-        const ulContainer = document.querySelectorAll(".card");//選取所有card的DOM元素
-
-        //迭代ulContainer陣列中所有card的元素
-        ulContainer.forEach((container) => {
-            //在目前所迭代的card-body元素裡面query 當前card-title及card-text的元素，
-            //並儲存在heroName及heroText裡面
-            const heroImage = container.querySelector(".card-img-top");
-            const heroName = container.querySelector(".card-title").textContent;
-            const heroText = container.querySelector(".card-text").textContent;
-            //用textContent屬性來取得目前元素裡面的文字內容
-            // const name=heroName.textContent;//取出目前heroName元素的文字內容，並存在name裡面
-            // const text=heroText.textContent;//取出目前heroText元素的文字內容，並存在text裡面
-            heroArray.push({ name: heroName, text: heroText, url: heroImage.src });//再push進去heroArray裡面
-        });
-
-
-
-        let wrapper, table, thead, tbody;
-        const tableTitle = ["英雄名字", "英雄描述", "英雄圖片"];
-        let hero2dArray = [];
-        wrapper = document.createElement("div");
-        wrapper.setAttribute("class", "wrapper");
-        const ul = document.createElement("div");//create一個div tag
-        ul.setAttribute("class", "herolist")
-        
+        let table, thead, tbody;
 
         window.onload = function () {
-            
+
 
             container = document.querySelector("#container");
             btnCreateHeroArray = document.getElementById("createhero");
             btnListHero = document.getElementById("listhero");
             btnTableHero = document.getElementById("tablehero");
+            createHeroArray();
 
             //第一個按鈕
             btnCreateHeroArray.addEventListener("click", function () {
@@ -2209,61 +2187,33 @@
                 alert("從DOM建立英雄人物陣列資料成功！");
 
                 //1.從DOM建立英雄人物資料
-                ulContainer.forEach((container) => {
-                    //在目前所迭代的card-body元素裡面query 當前card-title及card-text的元素，
-                    //並儲存在heroName及heroText裡面
-                    const heroImage = container.querySelector(".card-img-top");
-                    const heroName = container.querySelector(".card-title").textContent;
-                    const heroText = container.querySelector(".card-text").textContent;
-                    //用textContent屬性來取得目前元素裡面的文字內容
-                    // const name=heroName.textContent;//取出目前heroName元素的文字內容，並存在name裡面
-                    // const text=heroText.textContent;//取出目前heroText元素的文字內容，並存在text裡面
-                    heroArray.push({ name: heroName, text: heroText, url: heroImage.src });//再push進去heroArray裡面
-                });
+
                 //2.清除container
                 document.querySelector("#container").innerHTML = "";
             });
 
-            //第二個按鈕
+            //第二個按鈕 
+            //以文字迭代英雄人物資料
             btnListHero.addEventListener("click", function () {
                 if (heroArray.length === 0) {
                     alert("請先建立陣列資料");
                     return;
                 }
-                if (document.querySelector("#container") != null) {
-                    document.querySelector("#container").innerHTML = "";
-                }
-                if (document.querySelector(".herolist") != null) {
-                    document.querySelector(".herolist").innerHTML = "";
-                    console.log('中間按鈕資料被清空');
-                }
-                if (document.querySelector(".wrapper") != null) {
-                    document.querySelector(".wrapper").innerHTML = "";
-                    console.log('最後按鈕資料被清空');
-                }
                 alert("以文字迭代英雄人物資料！");
+                document.querySelector("#container").innerHTML = "";
 
-
-                //迭代heroArray陣列
-                //每迭代一次，就create一個p tag
-                //再把每位英文的名字及描述放在p tag裡面
-                //再把p tag 附加到 div裡面
-                //最後再把div附加到html body內，顯示在畫面上
-                heroArray.forEach((hero) => {
-                    const li = document.createElement('p')
-                    li.append(hero.name, hero.text, hero.url);
-                    ul.append(li);
+                let ulContainer=document.createElement('ul');
+                heroArray.forEach(hero=>{
+                    let liContainer=document.createElement('li');
+                    liContainer.append(hero.name,hero.text,hero.url);
+                    ulContainer.append(liContainer);
                 })
-                document.body.append(ul);
-
-                // document.querySelector("#container").innerHTML = "";
-                // document.querySelector(".wrapper").innerHTML=""; 
-
-
+                container.append(ulContainer);
             });
 
 
             //第三個按鈕
+            //以表格呈現英雄人物資料
             btnTableHero.addEventListener("click", function () {
 
                 if (heroArray.length === 0) {
@@ -2272,91 +2222,75 @@
                 }
                 alert("以表格呈現英雄人物資料！");
 
-               
 
 
-                //將heroArray裡面的物件值取出，放到hero2dArray裡面
-                if (document.querySelector("#container") != null) {
-                    document.querySelector("#container").innerHTML = "";
-                }
-                if (document.querySelector(".herolist") != null) {
-                    document.querySelector(".herolist").innerHTML = "";
-                    console.log('中間按鈕資料被清空');
-                }
-                if (document.querySelector(".wrapper") != null) {
-                    wrapper.innerHTML = "";
-                    console.log('最後按鈕資料被清空');
-                }
-                hero2dArray =[];
-                
-                heroArray.forEach(d => {
-                    let values = Object.values(d);
-                    hero2dArray.push(values);
-                })
-                //呼叫function，並帶有引數
-                
-                //表格
-                table = document.createElement('table');
-                table.setAttribute("class", "table table-bordered table-striped table-dark");
+                document.querySelector("#container").innerHTML = "";
 
-                thead = document.createElement('thead');
-                thead.style.textAlign = "center";
-                tbody = document.createElement('tbody');
-                
-                createThead(tableTitle);
-                createTbody(hero2dArray);
-                // 清空container的內容並將wrapper附加到body上
-                // ul.remove();
-                // document.querySelector("body").appendChild(wrapper);
-                document.body.append(wrapper);
+               table=document.createElement('table');
+               table.setAttribute("class", "table table-bordered table-striped table-dark");
+               thead=document.createElement('thead');
+               thead.style.textAlign = "center";
+               tbody=document.createElement('tbody');
 
-                // var a = document.querySelectorAll(".herolist");
-                // a.forEach(function(div){div.remove();});
+                document.body.append(container);
+
+                 createThead(heroTitles);
+                 createTbody(heroArray);
+
+
+
             });
 
-            
+
         }
         //建立表格標頭
         function createThead(titleArray) {
-                
-                let theadTR = document.createElement("tr");
-                 //create table-row的資料列
-                titleArray.forEach((title, index) => {  //titleArray做迭代 (每個標題 有3個)
-                    let th = document.createElement("th");
-                    th.innerText = title;
-                    theadTR.append(th);
-                })
-
-                thead.append(theadTR); //tr包在thead裡面
-                table.append(thead);//thead包在table裡面
-                wrapper.append(table);//table包在wrapper(div)裡面
-            }
-
-        //建立表格內容
-        //每一筆英雄資料要一列table-row(tr)
-        //hero2dArray資料做迭代，要把每一個資料(name,text,url)各自放在td裡面
-        //如果item(name,text,url)
-        function createTbody(data) {
-            data.forEach(dd => {
-                let tr = document.createElement("tr");
-                dd.forEach(item => {
-                    let td = document.createElement("td");
-                    // 如果迭代出來的item中有包含"http"或"https"字串的話
-                    if (item.includes("http") || item.includes("https")) {
-                        let img = document.createElement("img");
-                        img.src = item;//圖片的src=item
-                        img.style.maxWidth = "100px";
-                        td.append(img);
-                    } else {
-                        td.innerText = item;
-                    }
-                    tr.append(td);
-                })
-                tbody.append(tr);
+            let theadRow=document.createElement('tr');
+            titleArray.forEach(titles=>{
+                let tH=document.createElement('th');
+                tH.innerText=titles;
+                theadRow.append(tH);
             })
-            table.append(tbody);
-            wrapper.append(table);//table包在wrapper(div)裡面
+            thead.append(theadRow);
+            table.append(thead);
+            container.append(table);
 
+
+
+        }
+
+        //建立表格body
+        function createTbody(heroArray) {
+            heroArray.forEach(hero=>{
+                let tbodyRow=document.createElement('tr');
+                Object.values(hero).forEach(data=>{
+                    let tbodyData=document.createElement('td');
+                    if(data.includes("https")){
+                        let imageUrl=document.createElement('img');
+                        imageUrl.src=data;     
+                        imageUrl.style.maxWidth = "100px";
+                        tbodyData.append(imageUrl);
+                    }
+                    else{
+                        tbodyData.textContent=data;
+                    }
+                    tbodyRow.append(tbodyData);
+
+                })
+                table.append(tbodyRow);
+            })
+        }
+
+        //createHeroArray
+        function createHeroArray() {
+            const eachCard = document.querySelectorAll(".card");//選取所有card的DOM元素
+
+            eachCard.forEach((card) => {                
+                const heroImage = card.querySelector(".card-img-top");
+                const heroName = card.querySelector(".card-title").textContent;
+                const heroText = card.querySelector(".card-text").textContent;              
+                heroArray.push({ name: heroName, text: heroText, url: heroImage.src });
+            });
 
         }
 
