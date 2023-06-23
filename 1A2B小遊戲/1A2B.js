@@ -6,6 +6,9 @@ let answerButton = document.querySelector(".answer");
 let historyRecord = document.querySelector(".record-board");
 window.onload = function () {
     alert("請按遊戲開始按鈕")
+    resetButton.disabled=true;
+    answerButton.disabled=true;
+    submitButton.disabled=true;
 }
 let ans = "";
 function generateAnswer() {
@@ -32,7 +35,10 @@ function startGame() {
     generateAnswer();
     alert(`遊戲開始成功`)
     startButton.disabled = true;
-    resetButton.disabled = false;
+    
+    resetButton.disabled=false;
+    answerButton.disabled=false;
+    submitButton.disabled=false;
 }
 
 submitButton.addEventListener("click", result);
