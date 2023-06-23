@@ -1,16 +1,20 @@
+//取DOM元素
 let guessInput = document.querySelector("input");
 let submitButton = document.querySelector(".submit");
 let startButton = document.querySelector(".start");
 let resetButton = document.querySelector(".reset");
 let answerButton = document.querySelector(".answer");
 let historyRecord = document.querySelector(".record-board");
+
 window.onload = function () {
     alert("請按遊戲開始按鈕")
     resetButton.disabled=true;
     answerButton.disabled=true;
     submitButton.disabled=true;
 }
-let ans = "";
+
+//產生4個不重複的亂數
+let ans = "";//宣告一個空字串拿來放ans
 function generateAnswer() {
     while (ans.length < 4) {
         let ran = Math.floor(Math.random() * (9 - 0) + 0);
@@ -20,6 +24,7 @@ function generateAnswer() {
     } return ans;
 }
 
+//reset button
 resetButton.addEventListener("click", initial);
 function initial() {
     startButton.disabled = false;
@@ -30,6 +35,7 @@ function initial() {
     alert(`記得按下遊戲開始按鈕歐`)
 }
 
+//start-game button
 startButton.addEventListener("click", startGame);
 function startGame() {
     generateAnswer();
@@ -41,6 +47,7 @@ function startGame() {
     submitButton.disabled=false;
 }
 
+//submit button
 submitButton.addEventListener("click", result);
 let guessResult = [];
 let inputList = [];
@@ -86,11 +93,9 @@ function result() {
 
 }
 
+//判斷使用者輸入的4個數字是否有重複
 function hasDuplicate(input) {
     for (let k = 0; k < input.length; k++) {
-        // if (input[k] === input[input.length-k- 1]) {
-        //     return true;
-        // }
         for(let m=k+1;m<input.length;m++){
             if(input[k]===input[m]){
                 return true;
