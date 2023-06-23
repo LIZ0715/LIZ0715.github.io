@@ -11,6 +11,8 @@ window.onload = function () {
     resetButton.disabled=true;
     answerButton.disabled=true;
     submitButton.disabled=true;
+    guessResult.length =0;
+    inputList.length=0;
 }
 
 //產生4個不重複的亂數
@@ -27,14 +29,15 @@ function generateAnswer() {
 //reset button
 resetButton.addEventListener("click", initial);
 function initial() {
-    startButton.disabled = false;
-    resetButton.disabled = true;
+    answerButton.disabled = true;
+    submitButton.disabled = true;
     historyRecord.innerHTML = "";
-    let guessResult = [];
-    let inputList = [];
-    alert(`記得按下遊戲開始按鈕歐`)
-}
+    guessResult.length =0;
+    inputList.length=0;
+    alert(`記得按下遊戲開始按鈕歐`);
 
+    startButton.disabled = false;
+}
 //start-game button
 startButton.addEventListener("click", startGame);
 function startGame() {
@@ -76,7 +79,7 @@ function result() {
     }
     guessResult.push(`${A}A${B}B`);
 
-    let count=0;
+    
     //顯示在history-record上
     for (let i = guessResult.length - 1; i < guessResult.length; i++) {
         for (let j = inputList.length - 1; j < inputList.length; j++) {
