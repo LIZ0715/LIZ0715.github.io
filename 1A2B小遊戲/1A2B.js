@@ -76,12 +76,16 @@ function result() {
     }
     guessResult.push(`${A}A${B}B`);
 
+    let count=0;
     //顯示在history-record上
     for (let i = guessResult.length - 1; i < guessResult.length; i++) {
         for (let j = inputList.length - 1; j < inputList.length; j++) {
-            historyRecord.innerHTML += "<br>" + inputList[j] + " " + guessResult[i] + "<br>";
+            const recordCount=j+1;
+            const currentTime = new Date().toLocaleTimeString();
+            historyRecord.innerHTML += "<br>"+"第"+recordCount +"次-"+ inputList[j] + " " + guessResult[i] +"----"+currentTime+ "<br>";
         }
     }
+    
 
     if (A === 4) {
         alert(`猜對拉!`);
