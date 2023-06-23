@@ -88,11 +88,17 @@ function result() {
 
 function hasDuplicate(input) {
     for (let k = 0; k < input.length; k++) {
-        if (input[k] === input[input.length-k- 1]) {
-            return true;
+        // if (input[k] === input[input.length-k- 1]) {
+        //     return true;
+        // }
+        for(let m=k+1;m<input.length;m++){
+            if(input[k]===input[m]){
+                return true;
+            }
         }
     }
     return false;
+
 }
 
 
