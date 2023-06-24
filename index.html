@@ -9,13 +9,18 @@
         body{
             background-color:#d8f2da;
         }
+        .myhw{
+            display:flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+        }
         a{
-            display: block;
             text-decoration: none;
             color:black;
             font-weight: bold;
             font-size: 25px;
             margin-bottom: 15px;
+            /* outline:1px solid red; */
         }
         h1{
             background-color:black;
@@ -28,13 +33,20 @@
             content:'●';
             margin-right:10px;
         }
-        a:hover::after{
+        /* a:hover::after{
             content:'';
             display:block;
             height:3px;
-            width:300px;
+            width:fit-content;
             background-color: green;
             margin-top:10px;
+        } */
+
+        a:hover{
+           width:fit-content;
+           height:40px;
+           border-radius: 10px;
+           background-color: rgba(121, 213, 121, 0.878);
         }
     </style>
 </head>
