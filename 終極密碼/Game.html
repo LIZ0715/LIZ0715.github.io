@@ -14,6 +14,7 @@
             background-color: #fa0;
             border-radius: 20px;
             width: 300px;
+            text-align: center;
         }
 
 
@@ -68,11 +69,11 @@
 
 <body>
     <div class="group">
-        <h1></h1>
-        <h2></h2>
+        <h1>猜數字遊戲</h1>
+        <h2>請輸入1~100之間的數字</h2>
         <div class="input_wrapper">
             <input type="number" min="1" max="100" class="guessAns">
-            <button id="submit"></button>
+            <button id="submit">Submit</button>
         </div>
 
         <div class="button_num">
@@ -86,93 +87,132 @@
             <button class="number number8">8</button>
             <button class="number number0">9</button>
             <button class="number number0">0</button>
-            <button id="reset" class="number"></button>
-
+            <button id="reset" class="number">Reset</button>
         </div>
 
-        <div class="btn_func">
-            <button id="look-ans"></button>
-        </div>
+            <button id="look-ans">Answer</button>
+        
     </div>
 
 
+    
 
     <script>
-        let titleName = "猜數字遊戲";
-        let min = 1;
-        let max = 100;
-        let ans = Math.floor(Math.random() * max) + 1;
+        //取DOM元素
+        let input=document.querySelector("input");
+        let submitButton=document.querySelector("#submit");
+        let numberButton=document.querySelectorAll(".number");
+        let resetButton=document.querySelector("#reset");
+        let answerButton=document.querySelector("#look-ans");
 
-        window.onload = function () {
-            setGame();
+        window.onload = function (){
+            createNumber()
         }
 
-        let h1 = document.querySelector("h1");
-        let h2 = document.querySelector("h2");
-        let input = document.querySelector(".guessAns");
-        let btn1 = document.getElementById("reset");
-        let btn2 = document.getElementById("submit");
-        let btn3 = document.getElementById("look-ans");
-        let numberBtns = document.querySelectorAll(".number");
-
-        function setGame() {
-            h1.innerHTML = `<b>${titleName}</b>`;
-            h1.style.textAlign = "center";
-            h2.innerHTML = `請輸入${min}到${max}之間的數值`;
-            h2.style.textAlign = "center";
-            input.style.width = "50px";
-            btn1.innerHTML = `Reset`;
-            btn2.innerHTML = `Submit`;
-            btn3.innerHTML = `Answer`;
-            btn1.style.fontWeight = "bold";
-            btn2.style.fontWeight = "bold";
-            btn3.style.fontWeight = "bold";
-
-
+        // submitButton.addEventListener("click",)
+        //create 1~100之間亂數的function
+        let ans;
+        let min;
+        let mx;
+        function createNumber(){
+            min=1;
+            max=100;
+            ans = Math.floor(Math.random() * (max - min) + min);
+            console.log(ans);
         }
 
-        function submit_btn() {
-            let guessAns = parseInt(input.value);
-            if (guessAns < ans && guessAns >=min) {
-                min = guessAns;
-                h2.innerHTML = `請輸入${min}到${max}之間的數值`;
-            } else if (guessAns > ans && guessAns <= max) {
-                max = guessAns;
-                h2.innerHTML = `請輸入${min}到${max}之間的數值`;
-            } else if (guessAns === ans) {
-                alert(`You Win!`);
-            } else {
-                alert(`範圍錯誤!!請輸入${min}到${max}之間的數值`);
+
+        //showhint function
+
+        submitButton.addEventListener("click",result);
+        //遊戲判斷結果的function
+        function result(){
+            let userInput=input.value.trim();
+            let val=parseInt(userInput);//parseInt
+            //如果val是空值、不是數字及string第0個index是0，就跳出alert(檢查數入的是不是數字)
+            if(userInput===""||isNaN(userInput)||userInput[0]==="0"){
+                alert(`輸入格式不正確，請輸入1~100之間的整數`);
+                input.value="";
+                return;
+            }
+            else if(val>100){
+                alert(`輸入格式不正確，請輸入1~100之間的整數`);
+                input.value="";
+                return;
+            }
+            // console.log(userInput);
+            // console.log(typeof(userInput)); string
+            // console.log(typeof(userInputParse)) number
+
+            if(val<min || val>max){
+                alert(`請輸入正確的範圍`);
+                input.value="";
+                return;
             }
 
-            input.value = '';
+            if(val<ans){
+                min=val;
+                showHint();
+            }
+            else if (val>ans){
+                max=val;
+                showHint();
+            }
+            else if(val===ans){
+                alert(`猜對拉!!!!!`)
+                submitButton.disabled=true;
+                answerButton.disabled=true;
+            }
+            input.value="";
         }
 
-        btn1.addEventListener('click', function (event3) {
-            min = 1;
-            max = 100;
-            ans = Math.floor(Math.random() * max) + 1;
-            h2.innerHTML = `請輸入${min}到${max}之間的數值`;
-            input.value = '';
-            btn2.removeEventListener('click', submit_btn);
-            btn2.addEventListener('click', submit_btn);
-        })
 
-        btn2.addEventListener('click', submit_btn);
 
-        btn3.addEventListener('click', function (event2) {
+        // init function
+        resetButton.addEventListener("click",function(){
+            init();
+            submitButton.disabled=false;
+            answerButton.disabled=false;
+        });
+
+        function init(){
+            input.value="";
+            min=1;
+            max=100;
+            showHint();
+            createNumber()
+        }
+
+
+        function showHint(){
+            let hint=document.querySelector("h2");
+            hint.innerText=`請輸入${min}到${max}之間的數值`
+        }
+
+        //看答案 function
+        answerButton.addEventListener("click",lookAnswer);
+        function lookAnswer(){
             alert(`答案是:${ans}`);
-        })
-
-      
-
-        for (let i = 0; i < numberBtns.length; i++) {
-            numberBtns[i].addEventListener('click', function () {
-                let number = numberBtns[i].innerText;
-                input.value += number;
-            });
         }
+
+
+        //數字button 事件
+        //numberButton是node-list，迭代每個node去註冊事件
+        numberButton.forEach(num=>{
+            num.addEventListener("click",function(){
+                input.value+=num.innerText;
+            })
+        })
+     
+
+
+
+
+
+
+
     </script>
+
 </body>
 
 </html>
