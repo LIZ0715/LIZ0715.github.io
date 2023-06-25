@@ -92,6 +92,8 @@ function result() {
 
     if (A === 4) {
         alert(`猜對拉!`);
+        submitButton.disabled=true;
+        answerButton.disabled=true;
     }
 
     guessInput.value = "";
