@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .banner-slg {
+            background-color: rgb(231, 237, 239);
+            padding-bottom: 50px;
+        }
+
+        .banner-slg h2 {
+            font-size: 40px;
+            line-height: 1.5;
+
+        }
+
+        .banner-slg p {
+            line-height: 1.5;
+        }
+
+        .banner-slg .btn {
+            padding: 10px 125px;
+        }
+
+        .banner-slg .pic img {
+            width: 100%;
+        }
+
+        .banner-slg .pic {
+            height: 500px;
+            width: 100%;
+            /* border: 2px solid blue; */
+            border-radius: 50% 50% 0 0;
+            overflow: hidden;
+            /* outline: 1px solid orange; */
+        }
+
+        .slg {
+            background-color: #f7f8f9;
+        }
+
+        .platform-info-list img {
+            width: 100%;
+        }
+
+        .platform-info-list .container {
+            margin-top: 100px;
+        }
+
+        .platform-info-list li::marker {
+            color: blue;
+        }
+
+        .more-service {
+            background-color: #f7f8f9;
+        }
+
+        .more-service .card {
+            background-color: transparent;
+        }
+
+        .carousel-item img {}
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: gray;
+            /* 设置为您想要的颜色值 */
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer .footer-title a {
+            color: white;
+        }
+
+        .footer {
+            background-color: #00142D;
+        }
+
+        .footer .btn {
+            border-radius: 0;
+            padding: 10px 50px;
+        }
+
+        .main-header .login,
+        .tw {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            margin: 0 10px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .navbar-nav {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .banner-slg h2 {
+                font-size: 30px;
+            }
+
+            .banner-slg .btn {
+                padding-left: 50px;
+                padding-right: 50px
+            }
+
+            .credit-card-info {
+                margin-top: 10px;
+                font-size: 8px;
+            }
+
+            .platform-info-list .row {
+                justify-content: space-around;
+            }
+
+            .platform-info-list h3 {
+                font-size: 20px;
+                padding-top: 10px;
+            }
+
+            .platform-info-list p {
+                font-size: 13px;
+            }
+
+            .platform-info-list .container:nth-child(even) .row {
+                flex-direction: row-reverse;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            ul li {
+                width: 50%;
+                font-size: 12px;
+            }
+
+            .more-service p {
+                font-size: 13px;
+            }
+
+            .pic-list img {
+                width: 100px;
+            }
+
+            .brand-recommendation p {
+                padding-top: 20px;
+                font-size: 12px;
+            }
+
+            .name {
+                margin-bottom: 50px;
+            }
+
+            .breadcrumb-item+.breadcrumb-item::before {
+                content: "|";
+                padding: 0 5px;
+                color: #999999;
+            }
+
+            .icon a {
+                margin-right: 20px;
+                /* outline:1px solid red; */
+            }
+        }
+
+        @media screen and (min-width:1024px) {
+            .navbar-nav {
+                /* width: 100%; */
+                /* display: flex; */
+                /* justify-content: space-between; */
+                /* align-items: center; */
+            }
+
+            .platform-info-list .row{
+                justify-content: center;
+                align-items: center;
+            }
+            .platform-info-list h3{
+                font-size: 30px;
+                line-height: 1.5;
+            }
+            .platform-info-list p{
+                font-size: 15px;
+                /* line-height: 1.5; */
+            }
+            .platform-info-list li{
+                font-size: 15px;
+            }
+
+          
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header class="main-header">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12  col-md-12 text-end">
+                    <a class="login" href="">登入</a>
+                    <a class="tw" href="">台灣</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg col-12 col-md-12 ">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="./shopline_pic/original.png" alt="" class="w-75"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
+                            <a class="nav-link" href="#">新手上路</a>
+                        
+                        
+                            <a class="nav-link" href="#">開店服務</a>
+                        
+                        
+                            <a class="nav-link" href="#">行銷推廣</a>
+                        
+                        
+                            <a class="nav-link" href="#">營運管理</a>
+                        
+                       
+                            <a class="nav-link" href="#">方案費用</a>
+                        
+                        
+                            <a class="nav-link" href="#">更多資源</a>
+                       
+                        
+                            <a class="nav-link" href="#">開店說明會</a>
+                        
+
+                        <a class="btn btn-primary px-5 py-3">免費試用</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+   
+  
+    </header>
+    <div class="banner-slg">
+        <div class="container pt-5">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-md-5">
+                    <div class="txt">
+                        <h2 class="fw-bold">想在哪開店創業?<br>
+                            不管是 <span>網路開店</span> <br>
+                            SHOPLINE一站輕鬆開賣</h2>
+                        <p class="pt-3">從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                        <a class="btn btn-primary" href="">免費試用14天</a>
+                        <p class="credit-card-info">*無須綁定信用卡提供付款資訊</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div class="pic ">
+                        <img src="https://picsum.photos/300/400/?random=103" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slg">
+        <div class="container py-5">
+            <div class="row text-center">
+                <div class="main-title ">
+                    <h2 class="fw-bold">單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+                </div>
+                <div class="content">
+                    <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="platform-info-list">
+        <div class="container">
+            <div class="row">
+                <div class="pic col-12 col-md-5">
+                    <img src="./shopline_pic/shopline 1.webp" alt="">
+                </div>
+                <div class="txt col-12 col-md-7">
+                    <h3 class="fw-bold">免寫程式、多款版型<br>
+                        輕鬆打造全能電商網站</h3>
+                    <p class="pt-3">
+                        不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。
+                    </p>
+                    <ul class="lh-lg">
+                        <li class="">豐富版型主題與字型搭配</li>
+                        <li class="">SEO 搜尋引擎優化</li>
+                        <li class="">RWD 響應式網頁設計</li>
+                        <li class="">一頁商店</li>
+                        <li class="">獨有網址 ＆ SSL 安全憑證</li>
+                        <li class="">開放 HTML／CSS 編輯</li>
+                    </ul>
+                    <a href="">看看開店秘技<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="pic col-12 col-md-5">
+                    <img src="/HW3_shopline/shopline_pic/shopline 2.webp" alt="">
+                </div>
+                <div class="txt col-12 col-md-7">
+                    <h3 class="fw-bold ">支持海內外電商<br>
+                        金流、物流一次搞定
+                    </h3>
+                    <p class="pt-3">
+                        支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！
+                    </p>
+                    <ul class="lh-lg">
+                        <li class="w-50">線上／線下信用卡刷卡</li>
+                        <li class="w-50">多溫層宅配並指定運費</li>
+                        <li class="w-50">第三方金流／行動支付整合</li>
+                        <li class="w-50">超商／宅配貨到付款</li>
+                        <li class="w-50">超商代碼／條碼繳費</li>
+                        <li class="w-50">發票開立與串接</li>
+                    </ul>
+                    <a href="">看看開店秘技 <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row ">
+
+                <div class="pic col-12 col-md-5">
+                    <img src="/HW3_shopline/shopline_pic/shopline 3.webp" alt="">
+                </div>
+                <div class="txt col-12 col-md-7">
+                    <h3 class="fw-bold ">刺激下單，創造回購<br>
+                        行銷導流、促購模組任你玩</h3>
+                    <p class="pt-3">
+                        多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡；加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購！
+                    </p>
+                    <ul class="lh-lg">
+                        <li class="w-50">推薦活動與分潤</li>
+                        <li class="w-50">買Ｘ享Ｙ優惠</li>
+                        <li class="w-50">A+B 優惠活動</li>
+                        <li class="w-50">會員推薦獎賞</li>
+                        <li class="w-50">會員分級／點數／購物金</li>
+                        <li class="w-50">FB／Google／LINE 廣告追蹤</li>
+                    </ul>
+                    <a class="a3" href="#">看更多優惠模組<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="pic col-12 col-md-5">
+                    <img src="/HW3_shopline/shopline_pic/shopline 4.webp" alt="">
+                </div>
+                <div class="txt col-12 col-md-7">
+                    <h3 class="fw-bold ">「社群+電商」輕鬆開賣<br>
+                        打造一致的社群購物體驗
+                    </h3>
+                    <p class="pt-3">
+                        善用社群與顧客頻繁互動，讓你透過社群也能輕鬆開賣！從直播+1 接單、聊天機器人到各管道的訊息整合，我們都為你準備好了，不放過每個銷售環節，打造全方位的社群購物體驗！
+
+                    </p>
+                    <ul class=" lh-lg">
+                        <li class="w-50">社群直播購物系統</li>
+                        <li class="w-50">FB／IG／LINE 直播 +1</li>
+                        <li class="w-50">FB & IG 貼文 +1</li>
+                        <li class="w-50">FB／IG／LINE 對話式購物</li>
+                        <li class="w-50">自訂聊天機器人腳本</li>
+                        <li class="w-50">訊息整合中心</li>
+                    </ul>
+                    <a class="a4" href="#">看更多社群購物功能<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="pic col-12 col-md-5">
+                    <img src="/HW3_shopline/shopline_pic/shopline 5.webp" alt="">
+                </div>
+                <div class="txt col-12 col-md-7">
+                    <h3 class="fw-bold ">OMO 全通路無縫整併<br>
+                        輕鬆管理網店、門市以及其他通路
+                    </h3>
+                    <p class="pt-3">
+                        不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單到會員等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。
+
+
+                    </p>
+                    <ul class="lh-lg">
+                        <li class="w-50">門市 POS 系統</li>
+                        <li class="w-50">線上買門市取</li>
+                        <li class="w-50">線上線下會員/商品／庫存整合</li>
+                        <li class="w-50">進銷庫存／調撥／多店管理</li>
+                        <li class="w-50">門市快速集客工具</li>
+                        <li class="w-50">Smart OMO 會員導購工具</li>
+                    </ul>
+                    <a class="a5" href="#">了解更多全通路整合<i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="more-service">
+        <div class="container">
+            <div class="row py-5">
+                <div class="main-title text-center">
+                    <h3 class="fw-bold">更多功能與服務</h3>
+                </div>
+            </div>
+            <div class="row text-center ">
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 1.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">強大庫存與訂單系統</h5>
+                        <p class="card-text">從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 2.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">即時化商店業績分析</h5>
+                        <p class="card-text">圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 3.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">多國語系、幣值切換</h5>
+                        <p class="card-text">想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 4.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">專業顧問線上支援</h5>
+                        <p class="card-text">迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 5.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">廣告行銷加值服務</h5>
+                        <p class="card-text">由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-4 border-0 mb-5">
+                    <img src="/HW3_shopline/shopline_pic/icon 6.png" class="w-25 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">廣告行銷加值服務</h5>
+                        <p class="card-text">由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="brand-recommendation">
+        <div class="container">
+            <div class="row mx-auto">
+                <div class="row text-center">
+                    <div class="main-title py-5">
+                        <h3 class="fw-bold fs-3">人氣品牌一致推薦使用</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-12 col-md-2">
+                    <div class="pic-list">
+                        <a href="">
+                            <img src="./shopline_pic/original (2).png" alt="" class="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="pic-list">
+                        <a href="">
+                            <img src="./shopline_pic/original (3).png" alt="" class="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="pic-list">
+                        <a href="">
+                            <img src="./shopline_pic/original (4).png" alt="" class="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="pic-list">
+                        <a href="">
+                            <img src="./shopline_pic/original (5).png" alt="" class="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <div class="pic-list">
+                        <a href="">
+                            <img src="./shopline_pic/original (6).png" alt="" class="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="txt d-flex justify-content-center align-items-center flex-column">
+                            <p class="w-75 lh-lg">“ SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。
+                                ”
+                            </p>
+
+                            <div class="name">
+                                <span class="d-block fw-bold fs-5 lh-lg">Stan</span>
+                                <span>BONNY & READ店長</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <!-- <div class="container">
+            <div class="row"> -->
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="footer-title ">
+                <div class="container py-5 ">
+                    <div class="row ">
+                        <div class="col-md-2 ">
+                            <a class="fs-5" href="">關於我們</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="fs-5" href="">人才招募</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="fs-5" href="">媒體專區</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">網路開店</a>
+                            <a class="text-secondary mb-2" href="">特色總覽</a>
+                            <a class="text-secondary mb-1" href="">功能介紹</a>
+                            <a class="text-secondary mb-1" href="">版型主題</a>
+                            <a class="text-secondary mb-1" href="">客戶案例</a>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">社群購物</a>
+                            <a class="text-secondary mb-1" href="">特色總覽</a>
+                            <a class="text-secondary mb-1" href="">功能介紹</a>
+                            <a class="text-secondary mb-1" href="">IG直播+1</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">零售POS</a>
+                            <a class="text-secondary mb-1" href="">特色總覽</a>
+                            <a class="text-secondary mb-1" href="">功能介紹</a>
+                            <a class="text-secondary mb-1" href="">週邊硬體</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">我要開店</a>
+                            <a class="text-secondary mb-1" href="">開店方案</a>
+                            <a class="text-secondary mb-1" href="">開店說明會</a>
+                            <a class="text-secondary mb-1" href="">開店諮詢</a>
+                        </div>
+
+                    </div>
+                    <div class="more-resource col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">更多資源</a>
+                            <a class="text-secondary mb-1" href="">新手問答</a>
+                            <a class="text-secondary mb-1" href="">電商教室</a>
+                            <a class="text-secondary mb-1" href="">電商成長學苑</a>
+                            <a class="text-secondary mb-1" href="">DreamBig創品牌</a>
+                            <a class="text-secondary mb-1" href="">SHOPLINE TRENDS電商數據庫</a>
+                            <a class="text-secondary mb-1" href="">顧問陪跑計畫</a>
+                            <a class="text-secondary mb-1" href="">LINE官方網站</a>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <a class="text-light mb-2 fs-5" href="">SHOPLINE</a>
+                            <a class="text-secondary mb-1" href="">認識團隊</a>
+                            <a class="text-secondary mb-1" href="">合作機會</a>
+                            <a class="text-secondary mb-1" href="">精選夥伴</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+                </div>
+            </div> -->
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end">
+                    <a class="btn btn-warning btn-no-radius fw-bold fs-5" href="">資訊安全保護專區</a>
+                </div>
+            </div>
+            <div class="border-line">
+            </div>
+
+        </div>
+
+
+        <div class="container border-top mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="txt mt-4">
+                        <p class="text-light">服務時間 星期一至五 上午 10 點至晚上 7 點</p>
+                        <p class="text-light">© Copyright 2023 SHOPLINE Tech Co., Ltd.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="icon d-flex justify-content-end  mt-4">
+                        <a class="text-secondary fs-3" href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a class="text-secondary fs-3" href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a class="text-secondary fs-3" href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a class="text-secondary fs-3" href=""><i class="fa-brands fa-youtube"></i></a>
+                        <a class="text-secondary fs-3" href=""><i class="fa-regular fa-message"></i></a>
+                        <a class="text-secondary fs-3" href=""><i class="fa-sharp fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item "><a class="text-secondary" href="#">網站地圖</a></li>
+                            <li class="breadcrumb-item "><a class="text-secondary" href="#">隱私權政策</a></li>
+                            <li class="breadcrumb-item "><a class="text-secondary" href="#">會員條款</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
