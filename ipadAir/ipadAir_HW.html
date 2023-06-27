@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<style>
+    .circle img {
+        width: 30px;
+    }
+
+    .color-button {
+        gap: 10px;
+    }
+
+    .color-button .btn {
+        width: 45%;
+        aspect-ratio: 3/2;
+        margin-bottom: 10px;
+
+    }
+
+
+
+    .color-button a:active,
+    .color-button a:focus,
+    .color-button a:hover {
+        /* 取消点击特效，设置与默认样式相同 */
+        background-color: transparent !important;
+        color: inherit !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .col-md-4 {
+        width: 326px;
+    }
+
+    .btn {
+        width: 50%;
+    }
+
+
+    .ipad-pic {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 50%;
+        }
+
+    .color-text span{
+        color:#86868b;
+    }
+
+
+    .color-button .storage_describe{
+        width:93%;
+        aspect-ratio: 5/1;
+        background-color:#86868b47;
+    }
+
+    .color-button .Cellular{
+        width:93%;
+        aspect-ratio: 5/1;
+    }
+    .color-button .Wi-Fi{
+        width:93%;
+        aspect-ratio: 5/1;
+    }
+    /* .color-button .Wi-Fi .text{
+        align-self: start;
+    } */
+
+    .text_storage{
+        color:black;
+        text-align: start;
+    }
+
+    .btn:focus{
+        border:3px solid blue;
+    }
+
+    .Wi-Fi .text,
+    .Wi-Fi .price_text_Wi-Fi,
+    .Cellular .text,
+    .Cellular .price_text_Cellular{
+        color:black;
+    }
+    .Wi-Fi .content,
+    .Cellular .content{
+        font-size: 8px;
+    }
+    .price_text_Wi-Fi,
+    .price_text_Cellular{
+        font-size: 8px;
+    }
+    
+    .Cellular .text,
+    .Wi-Fi .text{
+        width:60%;
+    }
+
+   
+</style>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-md-8 ipad-pic">
+                <img src="../Apple/space-gray.jpg" alt="" class="w-100 main-pic">
+            </div>
+            <div class="col-md-4">
+                <div class="price fs-1">$$$$$</div>
+
+                <div class="color-text fw-bold fs-4">外觀。<span>挑選喜愛的顏色</span> </div>
+
+                <div class="color-button d-flex flex-wrap">
+                    <a class="space-gray col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="img circle">
+                            <img src="./ipad-air-finish-space-gray-2022.png" alt="" class="">
+                        </div>
+                        <div class="text">太空灰</div>
+                    </a>
+                    <a class="blue col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="img circle">
+                            <img src="./ipad-air-finish-blue-2022.png" alt="" class="">
+                        </div>
+                        <div class="text">藍色</div>
+                    </a>
+                    <a class="pink col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="img circle">
+                            <img src="./ipad-air-finish-pink-2022.png" alt="" class="">
+                        </div>
+                        <div class="text">粉紅色</div>
+                    </a>
+                    <a class="purple col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="img circle">
+                            <img src="./ipad-air-finish-purple-2022.png" alt="" class="">
+                        </div>
+                        <div class="text">紫色</div>
+                    </a>
+                    <a class="starlight col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="img circle">
+                            <img src="./ipad-air-finish-starlight-2022.png" alt="" class="">
+                        </div>
+                        <div class="text">星光色</div>
+                    </a>
+                    <a class="col-md-6"
+                        href="#">
+                    </a>
+
+                    <div class="color-text fw-bold fs-4">儲存裝置。<span>選擇需要的儲存空間大小。</span> </div>
+
+                    <a class="storage64 col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                         href="#">
+                        <div class="text_storage">64 <span>GB1</span></div>
+                        <div class="text_price">NT$19,900起</div>
+                     </a>
+                     <a class="storage256 col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                        href="#">
+                        <div class="text_storage">256<span>GB1</span></div>
+                        <div class="text_price">NT24,900起</div>
+                    </a>       
+                    <a class="storage_describe btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
+                    href="#">
+                        <div class="text_storage"> <span class="fw-bold">不確定需要多少儲存空間？</span><br>你的 iPad Air 儲存空間愈大， 你就有愈多空間儲存數位內容，滿足今日所需，也滿足未來需求。</div>                        
+                    </a>       
+
+
+                    <div class="color-text fw-bold fs-4">連線能力。<span>選擇連線方式</span> </div>
+                    <a class="Wi-Fi btn btn-outline-secondary d-flex align-items-center justify-content-between"
+                    href="#">
+                        <div class="text text-start"> <span class="fw-bold">Wi-Fi</span><br> <span class="content">每部 iPad 都可連接到 Wi-Fi 網路，使你能保持連線。</span></div>
+                        <div class="price_text_Wi-Fi">NT$OOOOO</div>                  
+                    </a>      
+                    <a class="Cellular btn btn-outline-secondary d-flex align-items-center justify-content-between"
+                    href="#">
+                        <div class="text text-start"> <span class="fw-bold">Wi-Fi+行動網路</span><br> <span class="content">Wi-Fi + 行動網路機型讓你在無法使用 Wi-Fi 時也能進行連線。</span></div>
+                        <div class="price_text_Cellular">NTOOOOO</div>                  
+                    </a>        
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- <img src="../Apple/picture/space-gray.jpg" alt=""> -->
+
+
+
+
+    <script>
+        const url = "https://raw.githubusercontent.com/LIZ0715/FileStorage/main/ipadair2023.json";
+    
+        //取DOM元素
+        let graySpaceButton = document.querySelector(".space-gray");
+        let blueButton = document.querySelector(".blue");
+        let purpleButton = document.querySelector(".purple");
+        let pinkButton = document.querySelector(".pink");
+        let starLightButton = document.querySelector(".starlight");
+        let picture = document.querySelector("img");
+
+        let storage64GB=document.querySelector(".storage64");
+        let storage256GB=document.querySelector(".storage256");
+        let ipadPrice=document.querySelector(".price");
+
+        let wifiButton=document.querySelector(".Wi-Fi");
+        let cellularButton=document.querySelector(".Cellular");
+        let wifiText=document.querySelector(".price_text_Wi-Fi");
+        let cellularText=document.querySelector(".price_text_Cellular")
+        let ipadArray = [];
+        
+        window.onload = function () {
+            graySpaceButton.addEventListener("click",ipadColor.bind(event,url,"太空灰色"));
+            blueButton.addEventListener("click",ipadColor.bind(event,url,"藍色"));
+            purpleButton.addEventListener("click",ipadColor.bind(event,url,"紫色"));
+            pinkButton.addEventListener("click",ipadColor.bind(event,url,"粉紅色"));
+            starLightButton.addEventListener("click",ipadColor.bind(event,url,"星光色"));
+            storage64GB.addEventListener("click",ipadStorage.bind(event,url,"64GB"));
+            storage256GB.addEventListener("click",ipadStorage.bind(event,url,"256GB"));
+            wifiButton.addEventListener("click",ipadInternet.bind(event,url,"Wi-Fi"));
+            cellularButton.addEventListener("click",ipadInternet.bind(event,url,"Cellular"));
+
+        }
+        let xhr = new XMLHttpRequest();
+        let queryColor
+    
+        function ipadColor(uri,color) {
+            xhr.onload = function () {
+    
+                    if (xhr.readyState == 4||xhr.status == 200) {
+                        ipadArray = JSON.parse(this.responseText);
+                        console.log(ipadArray);
+                    } else {
+                        console.log("Request failed with status:", xhr.status);
+                    }
+                    // let queryColor=ipadArray.find(item=>item.color==color);
+                    // console.log(queryColor)
+                    // picture.src=queryColor.picture;
+                    queryColor = ipadArray.filter(item => item.color == color);
+                    console.log(queryColor)
+                    picture.src = queryColor[0].picture;
+
+
+                }   
+            xhr.open("GET", uri);
+            xhr.send();
+    }
+
+    let queryStorage;
+    let pp;
+    function ipadStorage(uri,storage) {
+            xhr.onload = function () {
+    
+                    if (xhr.readyState == 4||xhr.status == 200) {
+                        ipadArray = JSON.parse(this.responseText);
+                        console.log(ipadArray);
+                    } else {
+                        console.log("Request failed with status:", xhr.status);
+                    }
+
+                    queryStorage=queryColor.filter(item=>item.storage==storage);
+                    console.log(queryStorage);
+
+                    // for(let i=0;i<1;i++){
+                    //     // console.log(queryStorage[0].price)
+                    //     pp=queryStorage[0].price;
+                
+                    // } console.log(p)
+
+                    // wifiText.textContent=pp;
+                    // cellularText.textContent=pp;
+
+
+                }   
+            xhr.open("GET", uri);
+            xhr.send();
+    }
+
+    let queryInternet;
+    let p;
+    function ipadInternet(uri,internet) {
+            xhr.onload = function () {
+    
+                    if (xhr.readyState == 4||xhr.status == 200) {
+                        ipadArray = JSON.parse(this.responseText);
+                        console.log(ipadArray);
+                    } else {
+                        console.log("Request failed with status:", xhr.status);
+                    }
+
+                    queryInternet=queryStorage.filter(item=>item.network==internet);
+                    
+                    queryInternet.forEach(item=>{
+                        p=item.price;
+                    })
+                    console.log(p)
+                    ipadPrice.textContent=`總價為:${p}`;
+                    // wifiText.textContent=`NT$${p}`;
+                    // cellularText.textContent=`NT$${p}`;
+
+
+
+                }   
+            xhr.open("GET", uri);
+            xhr.send();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+
+
+
+
+</html>
