@@ -14,6 +14,7 @@ let iphoneButton = document.getElementById("iphone");
 let macButton=document.getElementById("Mac");
 let appleButtonContainer = document.querySelector(".apple_btn");
 let startpic=document.querySelector('.start-pic');
+let home=document.getElementById('home');
 let colorName = [], storageName = [], networkName = [];
 let cb, sb, nb;
 window.onload = function () {
@@ -24,6 +25,11 @@ window.onload = function () {
     price.textContent="";
     startpic.src="./unnamed.jpg";
 }
+
+home.addEventListener("click",function(event){
+    location.reload();
+})
+
 //取id
 function getID(){
      //取id
