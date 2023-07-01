@@ -23,25 +23,31 @@
         border-radius: 0;
     }
 
+    .color-btn,
+    .storage-btn,
+    .network-btn{
+        width:40%;
+    }
+
   
 </style>
 <body>
     <div class="btn-group d-flex  --bs-btn-border-radius " role="group" aria-label="Basic mixed styles example">
-        <button type="button" class="btn btn-danger" id="ipadAir">ipadAir</button>
-        <button type="button" class="btn btn-warning" id="iphone">iphone</button>
-        <button type="button" class="btn btn-success" id="Mac">Mac</button>
+        <button type="button" class="btn btn-secondary border border-light" id="ipadAir">ipadAir</button>
+        <button type="button" class="btn btn-secondary border border-light" id="iphone">iphone 14 Pro</button>
+        <button type="button" class="btn btn-secondary border border-light" id="Mac">MacBook Pro 13</button>
     </div>
 
     <div class="container mt-md-5">
         <div class="row align-items-center">
-            <div class="apple_pic col-12 col-md-6">
+            <div class="apple_pic col-12 col-md-9">
                 <img src="./ipad-air-finish-unselect-gallery-1-202207 (1).jpg" alt="." class="w-100 main-pic">
             </div>
-            <div class="apple_btn col-12 col-md-6">
+            <div class="apple_btn col-12 col-md-3">
                 <div class="price fs-3 text-center" >$$$</div>
                 <div class="color-text fw-bold fs-4">顏色</div>
                 <div class="color_btn">
-                    <div class="row flex-wrap gap-3 color-row">
+                    <div class="row gap-3 color-row">
                     </div>
                 </div>
                 <div class="storage-text fw-bold fs-4">規格</div>
@@ -60,7 +66,7 @@
 
     <template id="color_button">
         <a id="name"
-            class="color-btn col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center w-25"
+            class="color-btn col-md-6 btn btn-outline-secondary d-flex flex-wrap align-items-center justify-content-center"
             href="#">
             <div class="img circle">
                 <img src="" alt="" class="w-25">
@@ -71,7 +77,7 @@
 
     <template id="storage_button">
         <a id="name"
-            class="storage-btn col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center w-25"
+            class="storage-btn col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
             href="#">
             <div class="text">name</div>
         </a>
@@ -79,7 +85,7 @@
 
     <template id="network_button">
         <a id="name"
-            class="network-btn col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center w-25"
+            class="network-btn col-md-6 btn btn-outline-secondary d-flex flex-column align-items-center justify-content-center"
             href="#">
             <div class="text">name</div>
         </a>
