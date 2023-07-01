@@ -22,9 +22,9 @@
     #Mac.btn{
         border-radius: 0;
     }
-    
-</style>
 
+  
+</style>
 <body>
     <div class="btn-group d-flex  --bs-btn-border-radius " role="group" aria-label="Basic mixed styles example">
         <button type="button" class="btn btn-danger" id="ipadAir">ipadAir</button>
@@ -43,24 +43,20 @@
                 <div class="color_btn">
                     <div class="row flex-wrap gap-3 color-row">
                     </div>
-
                 </div>
                 <div class="storage-text fw-bold fs-4">規格</div>
                 <div class="storage_btn">
                     <div class="row flex-wrap gap-3 storage-row">
                     </div>
-
                 </div>
                 <div class="network-text fw-bold fs-4">網路</div>
                 <div class="network_btn">
                     <div class="row flex-wrap gap-3 network-row">
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <template id="color_button">
         <a id="name"
@@ -88,8 +84,6 @@
             <div class="text">name</div>
         </a>
     </template>
-    <!-- <img src="../ipadAir/ipad-air-finish-blue-2022.png" alt=""> -->
-
 
     <script>
         const url = "https://raw.githubusercontent.com/LIZ0715/FileStorage/main/apple.json";
@@ -115,20 +109,13 @@
             document.querySelector(".color-text").textContent = "";
             document.querySelector(".storage-text").textContent = "";
             price.textContent="";
-
-
-
-
         }
-
         macButton.addEventListener("click",function(event){
             clearAppleBtn();
             generateMacButton();
             document.querySelector(".network-text").textContent = "SSD";
             document.querySelector(".color-text").textContent = "顏色";
             document.querySelector(".storage-text").textContent = "規格";
-
-
             p="";
             pp="";
             cb="";
@@ -138,33 +125,27 @@
             storageName.length=0;
             networkName.length=0;
             price.textContent=`總價為:`;
-            applePicture.src="./Msilver.jpg";
-
+            applePicture.src="./macbook.jpg";
             //取id
             cb=document.querySelectorAll(".color-btn");
             cb.forEach(item=>{
                 colorName.push(item.getAttribute("id"));
             });
-            console.log(colorName);
 
             sb = document.querySelectorAll(".storage-btn");
             sb.forEach(item => {
                 storageName.push(item.getAttribute("id"));
             });
-            console.log(storageName);
 
             nb = document.querySelectorAll(".network-btn"); //SSD
             nb.forEach(item => {
                 networkName.push(item.getAttribute("id"));
             });
-            console.log(networkName);
-
 
              //掛事件
              cb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentColor = colorName[index];
-                    console.log(currentColor);
                     macColor(currentColor);
                 })
             })
@@ -173,7 +154,6 @@
             sb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentStorage = storageName[index];
-                    console.log(currentStorage);
                     macStorage(currentStorage);
                 })
             })
@@ -181,12 +161,9 @@
             nb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentNetwork = networkName[index]; //SSD
-                    console.log(currentNetwork);
                     macSSD(currentNetwork);
                 })
             })
-
-            
         })
 
         iphoneButton.addEventListener("click", function (event) {
@@ -201,46 +178,36 @@
             storageName.length=0;
             networkName.length=0;
             price.textContent=`總價為:`;
-            applePicture.src="./gold.jpg";
+            applePicture.src="./iphone.jpg";
             // ipadAirButton.disabled=false;
             // iphoneButton.disabled=true;
             document.querySelector(".network-text").textContent = "";
             document.querySelector(".color-text").textContent = "顏色";
             document.querySelector(".storage-text").textContent = "規格";
-
-
-
             cb = document.querySelectorAll(".color-btn");
             cb.forEach(item => {
                 colorName.push(item.getAttribute("id"));
             });
-            console.log(colorName);
 
             sb = document.querySelectorAll(".storage-btn");
             sb.forEach(item => {
                 storageName.push(item.getAttribute("id"));
             });
-            console.log(storageName);
 
             //掛事件
             cb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentColor = colorName[index];
-                    console.log(currentColor);
                     iphoneColor(currentColor);
                 })
             })
 
-
             sb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentStorage = storageName[index];
-                    console.log(currentStorage);
-                    iphoneStorage(currentStorage);
-                   
+                    iphoneStorage(currentStorage);                   
                  })
             })
-
         })
 
         ipadAirButton.addEventListener("click", function (event) {
@@ -260,43 +227,35 @@
             document.querySelector(".color-text").textContent = "顏色";
             applePicture.src="./ipad-air-finish-unselect-gallery-1-202207 (1).jpg";
 
-
-
             // ipadAirButton.disabled = true;
             //找出id名字
             cb = document.querySelectorAll(".color-btn");
             cb.forEach(item => {
                 colorName.push(item.getAttribute("id"));
             });
-            console.log(colorName);
 
             sb = document.querySelectorAll(".storage-btn");
             sb.forEach(item => {
                 storageName.push(item.getAttribute("id"));
             });
-            console.log(storageName);
 
             nb = document.querySelectorAll(".network-btn");
             nb.forEach(item => {
                 networkName.push(item.getAttribute("id"));
             });
-            console.log(networkName);
 
             //掛事件  
             //找出當前按的button是哪個顏色
             cb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentColor = colorName[index];
-                    console.log(currentColor);
                     ipadColor(currentColor); //呼叫ipadColor方法，讓相對應的圖片顯示在畫面上
                 })
             })
 
-
             sb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentStorage = storageName[index];
-                    console.log(currentStorage);
                     ipadStorage(currentStorage);
                 })
             })
@@ -304,7 +263,6 @@
             nb.forEach((btn, index) => {
                 btn.addEventListener("click", name => {
                     let currentNetwork = networkName[index];
-                    console.log(currentNetwork);
                     ipadNetwork(currentNetwork);
                 })
             })
@@ -317,10 +275,8 @@
             network_row.innerHTML = "";
         }
 
-
         //取JSON資料
         let appleArray = [];
-        // let colorArray = [];
         let xhr = new XMLHttpRequest();
         function getJSONdata(uri) {
             xhr.onload = function () {
@@ -336,13 +292,9 @@
             xhr.send();
         }
 
-
         //ipadAir
         function generateButton() {
-
             let query = appleArray.filter(item => item.storage == "64GB" && item.network == "Wi-Fi");
-            console.log(query)
-            // console.log(colorArray)
 
             //查詢容量
             let queryResult = [];
@@ -366,28 +318,21 @@
                 queryNetwork.push(queryC);
             } console.log(queryNetwork)
 
-
             query.forEach((ipad, index) => {
                 color_row.append(getColorButton(ipad.picture, ipad.color));
-                // appleButtonContainer.append(color_row);
             })
             queryResult.forEach((ipad, index) => {
                 storage_row.append(getStorageButton(ipad.storage));
-                // appleButtonContainer.append(storage_row);
-
             })
 
             queryNetwork.forEach((ipad, index) => {
                 network_row.append(getNetworkButton(ipad.network));
-                // appleButtonContainer.append(network_row);
-
             })
 
         }
 
         //iphone generate button
         function generateIphoneButton() {
-            // clearAppleBtn();
             //手機顏色
             let iphoneColors = appleArray.filter(item => item.price === 34900);
             console.log(iphoneColors);
@@ -432,11 +377,9 @@
             macColors.push(macColors1);
             macColors2=appleArray.find(item=>item.id==="mac" && item.color==="太空灰色");
             macColors.push(macColors2);
-            console.log(macColors);
             macColors.forEach((mac) => {
                 color_row.append(getColorButton(mac.picture, mac.color))
             })
-
 
             //Mac Storage
             let queryResult = [];
@@ -457,8 +400,6 @@
             console.log(queryResult)
             queryResult.forEach((mac, index) => {
                 storage_row.append(getStorageButton(mac.storage));
-                // appleButtonContainer.append(storage_row);
-
             })
 
             //Mac SSD 128GB 256GB 512GB 1TB 2TB
@@ -491,21 +432,17 @@
             console.log(querySSD)
             querySSD.forEach((mac, index) => {
                 network_row.append(getNetworkButton(mac.SSD));
-                // appleButtonContainer.append(storage_row);
-
             })
         }
 
         //clone template樣板
-
         //顏色的樣板
         function getColorButton(circleUrl, name) {
             let cloneCard = color_template.content.cloneNode(true);//true會把節點下面的子節點一起複製起來
             let button = cloneCard.querySelector("a");
-            button.id = name;
+            button.id = name;//設id
             cloneCard.querySelector("img").src = `./${circleUrl}`;
             cloneCard.querySelector(".text").innerHTML = name;
-            // cloneCard.querySelector(".img").src=circleUrl;
             return cloneCard;//把製作好的卡片回傳給呼叫端
         }
 
@@ -525,61 +462,47 @@
             return cloneCard;
         }
 
-
         //掛事件呼叫
         let queryColor;
         function ipadColor(color) {
             queryColor = appleArray.filter(item => item.color == color);
-            console.log(queryColor)
             applePicture.src = `./${queryColor[0].mainpic}`;
         }
         let queryIphoneColor;
         function iphoneColor(color) {
             queryIphoneColor = appleArray.filter(item => item.color == color);
-            console.log(queryIphoneColor)
             applePicture.src = `./${queryIphoneColor[0].mainpic}`;
         }
-
         let queryMacColor;
         function macColor(color){
             queryMacColor=appleArray.filter(item=>item.id=="mac" && item.color===color); //因為iphone也有銀色，所以加上id判斷
-            console.log(queryMacColor);
             applePicture.src=`./${queryMacColor[0].mainpic}`
         }
-
         let queryStorage;
         function ipadStorage(storage) {
             queryStorage = queryColor.filter(item => item.storage == storage); 
-            console.log(queryStorage);
         }
-
         let queryIphoneStorage;
         let pp;
         function iphoneStorage(storage) {
             queryIphoneStorage = queryIphoneColor.filter(item => item.storage == storage);
-            console.log(queryIphoneStorage);
             queryIphoneStorage.forEach(item=>{
                 pp=item.price;
             })
-            console.log(pp);
             price.textContent= `總價為:${pp}`;
         }
-
         let queryMacStorage;
         function macStorage(storage){
             queryMacStorage=queryMacColor.filter(item=>item.storage===storage);
-            console.log(queryMacStorage);
         }
 
         let queryInternet;
         let p;
         function ipadNetwork(internet) {
             queryInternet = queryStorage.filter(item => item.network == internet);
-            console.log(queryInternet);
             queryInternet.forEach(item => {
                 p = item.price;
             })
-            console.log(p)
             price.textContent = `總價為:${p}`;
         }
 
@@ -591,14 +514,9 @@
             queryMacSSD.forEach(item=>{
                 ppp=item.price;
             })
-            console.log(ppp);
             price.textContent=`總價為:${ppp}`;
         }
 </script>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
