@@ -67,7 +67,7 @@ macButton.addEventListener("click",function(event){
     colorName.length=0;
     storageName.length=0;
     networkName.length=0;
-    price.textContent=`總價為:`;
+    price.textContent=`NT$`;
     applePicture.src="./macbook.jpg";
     getID();
      //掛事件
@@ -92,7 +92,7 @@ macButton.addEventListener("click",function(event){
             queryStorage.forEach(item=>{
             ppp=item.price;
              })
-             price.textContent=`總價為:${ppp}`;
+             price.textContent=`NT$${ppp}`;
             })
     })
 })
@@ -110,7 +110,7 @@ iphoneButton.addEventListener("click", function (event) {
     colorName.length=0;
     storageName.length=0;
     networkName.length=0;
-    price.textContent=`總價為:`;
+    price.textContent=`NT$`;
     applePicture.src="./1688225028502.jpg";
     document.querySelector(".network-text").textContent = "";
     document.querySelector(".color-text").textContent = "顏色";
@@ -131,7 +131,7 @@ iphoneButton.addEventListener("click", function (event) {
                queryStorage.forEach(item=>{
                pp=item.price;
             })
-                price.textContent= `總價為:${pp}`;              
+                price.textContent= `NT$${pp}`;              
          })
     })
 })
@@ -149,7 +149,7 @@ ipadAirButton.addEventListener("click", function (event) {
     colorName.length=0;
     storageName.length=0;
     networkName.length=0;
-    price.textContent=`總價為:`;
+    price.textContent=`NT$`;
     document.querySelector(".network-text").textContent = "網路";
     document.querySelector(".storage-text").textContent = "規格";
     document.querySelector(".color-text").textContent = "顏色";
@@ -178,7 +178,7 @@ ipadAirButton.addEventListener("click", function (event) {
             queryStorage.forEach(item=>{
                 p=item.price;
             })
-            price.textContent= `總價為:${p}`;              
+            price.textContent= `NT$${p}`;              
         })
     })
 });
