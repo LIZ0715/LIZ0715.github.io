@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<style>
+    body {
+        background-color: rgba(0, 0, 0, 0.97);
+        color: white;
+    } 
+
+    .circle img {
+        width: 100px;
+    }
+
+    .storage_btn a,
+    .network_btn a {
+        padding: 25px 0;
+    }
+
+    #ipadAir.btn,
+    #Mac.btn {
+        border-radius: 0;
+    }
+
+    .color-btn,
+    .storage-btn,
+    .network-btn {
+        width: 40%;
+    }
+
+    .bordered {
+        border-left: 1px solid white;
+    }
+   
+    .start-pic{
+        display: flex;
+        margin:auto;
+        margin-top:100px;
+    }
+
+    img{
+        border-radius: 10px;
+    } 
+</style>
+
+<body>
+    
+    <div class="btn-group d-flex" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-light border" id="home"><i class="fa-brands fa-apple" style="color: #0d0d0d;"></i></button>
+        <button type="button" class="btn btn-light border border " id="ipadAir">ipadAir</button>
+        <button type="button" class="btn btn-light border" id="iphone">iphone 14 Pro</button>
+        <button type="button" class="btn btn-light border" id="Mac">MacBook Pro 13</button>
+    </div>
+   
+    <img src="" alt="." class="w-25 start-pic" >
+
+    <div class="container mt-md-5">
+        <div class="row align-items-center justify-content-between">
+            <div class="apple_pic col-12 col-md-8">
+                <img src="" alt="" class="w-100 main-pic">
+            </div>
+            <div class="apple_btn col-12 col-md-3">
+                <div class="price fs-3 text-center"></div>
+                <div class="color-text fw-bold fs-4 mt-3"></div>
+                <div class="color_btn  ">
+                    <div class="row gap-3 color-row d-flex mx-auto">
+                    </div>
+                </div>
+                <div class="storage-text fw-bold fs-4 mt-2"></div>
+                <div class="storage_btn">
+                    <div class="row flex-wrap gap-3 storage-row mx-auto">
+                    </div>
+                </div>
+                <div class="network-text fw-bold fs-4  mt-2"></div>
+                <div class="network_btn">
+                    <div class="row flex-wrap gap-3 network-row mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="color_button">
+        <a id="name" class="color-btn col-md-6 btn btn-light d-flex flex-wrap align-items-center justify-content-center"
+            href="#">
+            <div class="img circle">
+                <img src="" alt="" class="w-25">
+            </div>
+            <div class="text">name</div>
+        </a>
+    </template>
+
+    <template id="storageAndnetWork_button">
+        <a id="name"
+            class="col-md-6 btn btn-light d-flex flex-column align-items-center justify-content-center"
+            href="#">
+            <div class="text">name</div>
+        </a>
+    </template>
+
+    <script src="apple2.js">
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
