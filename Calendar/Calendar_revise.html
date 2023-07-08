@@ -418,10 +418,6 @@
 
         let data;
         function addModal() {
-
-        }
-        addModalBtn.addEventListener("click", function () {
-            // addModal();
             let dataArray = [];
             let key = addModalDate.value;
             addModalContent = document.getElementById("add-content");
@@ -434,6 +430,10 @@
             localStorage.setItem(key, JSON.stringify(dataArray));
             renderCalendar(currentYear, currentMonth);
             myAddModal.hide();
+        }
+        addModalBtn.addEventListener("click", function () {
+            addModal();
+           
         })
 
         //刪除按鈕
@@ -465,11 +465,11 @@
 
 
         //新增的enter鍵
-        // addModalContent.addEventListener('keydown', function (event) {
-        //     if (event.key === "Enter") {
-        //         addModal();
-        //     }
-        // });
+        addModalContent.addEventListener('keydown', function (event) {
+            if (event.key === "Enter") {
+                addModal();
+            }
+        });
 
 
 
