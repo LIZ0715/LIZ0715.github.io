@@ -340,7 +340,8 @@
                 })
 
                 //尋找localStorage在那天有沒有行程，若有的話要跟日曆一起渲染出來
-                let findKey = `${currentYear}-${currentMonth + 1}-${i}`;
+                let findKey = `${currentYear}-${currentMonth+1}-${i}`;
+                console.log(findKey);
                 let schedule = JSON.parse(localStorage.getItem(findKey));
                 console.log(schedule);
                 if (schedule != null) {
@@ -409,12 +410,18 @@
             let today = new Date();
             let month = today.getMonth();
             let year = today.getFullYear();
-            renderCalendar(year, month);
+            currentMonth=month;
+            currentYear=year
+            renderCalendar(currentYear, currentMonth);
 
         });
 
         let data;
         function addModal() {
+
+        }
+        addModalBtn.addEventListener("click", function () {
+            // addModal();
             let dataArray = [];
             let key = addModalDate.value;
             addModalContent = document.getElementById("add-content");
@@ -427,9 +434,6 @@
             localStorage.setItem(key, JSON.stringify(dataArray));
             renderCalendar(currentYear, currentMonth);
             myAddModal.hide();
-        }
-        addModalBtn.addEventListener("click", function () {
-            addModal();
         })
 
         //刪除按鈕
@@ -460,11 +464,12 @@
 
 
 
-        addModalContent.addEventListener('keydown', function (event) {
-            if (event.key === "Enter") {
-                addModal();
-            }
-        });
+        //新增的enter鍵
+        // addModalContent.addEventListener('keydown', function (event) {
+        //     if (event.key === "Enter") {
+        //         addModal();
+        //     }
+        // });
 
 
 
