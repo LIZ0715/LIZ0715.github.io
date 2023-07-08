@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      
+    </head>
+<style>
+    /* body {
+        background-color: rgba(255, 0, 0, 0.122);
+    } */
+
+    /* .container {
+        background-color: white;
+        border-radius: 20px;
+    } */
+    .container.first {
+        background-color: rgb(142,220,203);
+        border-radius: 30px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+
+    }
+
+    .container {
+        background-color: #fff5f1;
+        border-radius: 20px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+
+    }
+
+    .DayOfWeek div {
+        width: 13%;
+        aspect-ratio: 3/0.8;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+    }
+
+    .DayOfWeek div {
+        margin-top: 10px;
+        border-radius:10%;
+    }
+
+    .day div {
+        width: 13%;
+        aspect-ratio: 3/3;
+        border-radius: 20px;
+        border: 2px solid black;
+
+    }
+
+    .date {
+        margin: 6px 0;
+        font-size: 16px;
+        /* text-align: center; */
+        /* text-decoration: underline; */
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    span {
+        background-color: #fac15b;
+        display: flex;        
+        justify-content: center;
+    }
+
+    #today{
+        background-color:#ff8447;
+        border-radius: 20px;
+    }
+
+    #today:hover{
+        background-color: white;
+    }
+    button span {
+        background-color: orange;
+        width: 50px;
+        border-radius: 10px;
+    }
+
+    button span:hover {
+        background-color: white;
+    }
+
+    .sun {
+        background-color: #e1529a;
+        color: white;
+    }
+
+    .mon,
+    .tue,
+    .wed,
+    .thur,
+    .fri {
+        background-color: #317ea8;
+        color: white;
+    }
+
+    .sat {
+        background-color: #ff8447;
+        color: white;
+    }
+
+    .yearText,
+    .monthText {
+        font-family: 'Nerko One', cursive; 
+        font-size: 70px;
+    }
+
+    .date span{
+        font-family: 'Nerko One', cursive; 
+        font-size: 20px;
+    }
+    
+
+    .modalbtn{
+        display: none;
+    }
+
+    li:hover{
+        text-decoration:underline;
+        text-decoration-thickness: 2px;
+        /* text-decoration-color:black ; */
+    }
+    
+    .date:hover{
+        cursor: pointer;
+    }
+
+    body{
+        background-color: rgb(255,211,75);
+    }
+</style>
+
+<body>
+    <div class="container first">
+        <div class="yearAndmonth d-flex justify-content-center mt-5 py-2">
+            <div class="monthText fw-bold mx-3"></div>
+            <div class="yearText fw-bold"></div>
+        </div>
+        <div class="text-center mt-3 mb-2">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn fw-bold my-2" id="lastmonth">
+                    <span>< </span></button>                       
+                <button type="button" class="btn fw-bold my-2" id="today">This Month</button>
+                <button type="button" class="btn fw-bold my-2" id="nextmonth"><span>></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="DayOfWeek d-flex flex-wrap justify-content-between text-center">
+                <div class="sun border fw-bold d-flex align-items-center justify-content-center">SUN</div>
+                <div class="mon border fw-bold d-flex align-items-center justify-content-center">MON</div>
+                <div class="tue border fw-bold d-flex align-items-center justify-content-center">TUE</div>
+                <div class="wed border fw-bold d-flex align-items-center justify-content-center">WED</div>
+                <div class="thur border fw-bold d-flex align-items-center justify-content-center">THUR</div>
+                <div class="fri border fw-bold d-flex align-items-center justify-content-center">FRI</div>
+                <div class="sat border fw-bold d-flex align-items-center justify-content-center">SAT</div>
+            </div>
+            <div class="day d-flex flex-wrap justify-content-between">
+                <!-- <div class="date"></div>
+                <div class="date "></div>
+                <div class="date "></div>
+                <div class="date "></div>
+                <div class="date "></div>
+                <div class="date "></div>
+                <div class="date "></div> -->
+            </div>
+        </div>
+
+
+
+          <!--新增行程 Modal-->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary modalbtn" data-bs-toggle="modal" data-bs-target="#addModal">
+        新增行程
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addModalLabel">新增行程</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--yyyy-MM-dd-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">日期</span>
+                        <input id="add-date" type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1" disabled>
+                    </div>
+
+                    <!--內容-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">內容</span>
+                        <input id="add-content" type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">關閉</button>
+                    <button type="button" class="btn btn-primary" id="add">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+  
+
+    <!--編輯行程 Modal-->
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary modalbtn" data-bs-toggle="modal" data-bs-target="#editModal">
+        編輯行程
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editModalLabel">編輯行程</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--yyyy-MM-dd-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">日期</span>
+                        <input id="edit-date" type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1" disabled>
+                    </div>
+
+                     <!--內容-->
+                     <div class="input-group mb-3">
+                        <span class="input-group-text">內容</span>
+                        <input id="edit-content" type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="">關閉</button>
+                    <button type="button" class="btn btn-primary" id="revise">修改</button>
+                    <button type="button" class="btn btn-danger" id="delete">刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+
+
+        <script>
+            //Modal...
+            let myAddModal = new bootstrap.Modal(document.getElementById('addModal'), {
+                keyboard: false
+            })
+        
+            let myEditModal = new bootstrap.Modal('#editModal', {
+                keyboard: false
+            })
+        
+            let currentYear;
+                let currentMonth;
+        
+                //取DOM和按钮
+                let dayContainer = document.querySelector('.day');
+                let yearText = document.querySelector(".yearText");
+                let monthText = document.querySelector(".monthText");
+                let lastMonthBtn = document.getElementById("lastmonth");
+                let todayBtn = document.getElementById("today");
+                let nextMonthBtn = document.getElementById("nextmonth");
+                let closeModalBtn=document.getElementById('close');
+                let addModalBtn=document.getElementById('add');
+
+                let editModalBtn=document.getElementById('revise');
+                let deleteModalBtn=document.getElementById('delete');
+                let editDate=document.getElementById('edit-date');
+                let editContent=document.getElementById('edit-content');
+
+
+                
+                window.onload = function () {
+                    let today = new Date();
+                    currentYear = today.getFullYear();
+                    currentMonth = today.getMonth();
+                    renderCalendar(currentYear, currentMonth);
+                }
+        
+                let addModalDate;
+                //行事曆格子渲染
+                function renderCalendar(year, month) {
+                    dayContainer.innerHTML = "";
+                    // let today = new Date();
+                    let engMonth = new Date(year, month).toLocaleString('en', { month: 'long' });
+                    yearText.textContent = year;
+                    monthText.textContent = engMonth;
+        
+                    let firstDayInMonth = new Date(year, month, 1);
+                    let GetFirstDayInMonth = firstDayInMonth.getDay();
+        
+                    let daysInMonth = new Date(year, month + 1, 0);
+                    let GetDaysInMonth = daysInMonth.getDate();
+        
+                    //新增1號前的空白格子
+                    for (let i = 0; i < GetFirstDayInMonth; i++) {
+                        let emptyBox = document.createElement('div');
+                        emptyBox.setAttribute("class", "date");
+                        emptyBox.style.backgroundColor='#D3D3D3';
+                        dayContainer.append(emptyBox);
+                    }
+        
+                    //新增1號到當月最後一天的格子，並產生日期
+                    for (let i = 1; i <= GetDaysInMonth; i++) {
+                        let hasNumberBox = document.createElement('div');
+                        let numberContainer = document.createElement('span');
+                        numberContainer.textContent = i;
+                        hasNumberBox.append(numberContainer);
+                        hasNumberBox.setAttribute("id", `${i}`);
+                        hasNumberBox.setAttribute("class", "date");
+                        dayContainer.append(hasNumberBox);
+                        hasNumberBox.addEventListener("click",function(){
+                            myAddModal.show();
+                            addModalDate=document.getElementById('add-date');
+                            addModalDate.value=`${year}-${month+1}-${i}`
+                        })
+
+                        //尋找localStorage在那天有沒有行程，若有的話要跟日曆一起渲染出來
+                        let findKey=`${currentYear}-${currentMonth+1}-${i}`;
+                        let schedule=JSON.parse(localStorage.getItem(findKey));
+                        console.log(schedule);
+                        if(schedule!=null){
+                        let ul=document.createElement('ul');
+                        schedule.forEach((item,index)=>{
+                            let li=document.createElement('li');
+                            li.addEventListener("click",function(event){
+                                event.stopPropagation(); //處理冒泡事件
+                                myEditModal.show();//當我點擊li會出現edit modal
+                                currentScheduleIndex=index;
+                                editDate.value=`${currentYear}-${currentMonth+1}-${i}`;
+                                editContent.value=item.content;
+
+                            })
+                            li.textContent=item.content;
+                            ul.append(li);
+                        })
+                        hasNumberBox.append(ul);
+                        }
+                    }
+        
+                    // 下個月的日期格子
+                    let totalBox = GetDaysInMonth + GetFirstDayInMonth;
+                    console.log(totalBox);
+                    let week = Math.ceil(totalBox / 7);
+                    console.log(week);
+                    if (week === 6) {
+                        for (let i = 0; i < 42 - totalBox; i++) {
+                            let emptyBox = document.createElement('div');
+                            emptyBox.setAttribute("class", "date")
+                            emptyBox.style.backgroundColor='#D3D3D3';
+
+                            dayContainer.append(emptyBox);
+                        }
+                    } else if (week === 5) {
+                        for (let i = 0; i < 35 - totalBox; i++) {
+                            let emptyBox = document.createElement('div');
+                            emptyBox.setAttribute("class", "date")
+                            emptyBox.style.backgroundColor='#D3D3D3';
+
+                            dayContainer.append(emptyBox);
+                        }
+                    }
+                }
+        
+                //lastMonthBtn
+                lastMonthBtn.addEventListener("click", function () {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentYear, currentMonth);
+                });
+        
+                nextMonthBtn.addEventListener("click", function () {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentYear, currentMonth);
+                })
+        
+                todayBtn.addEventListener("click", function () {
+                    let today = new Date();
+                    let month = today.getMonth();
+                    let year = today.getFullYear();
+                    renderCalendar(year, month);
+        
+                });
+    
+                let addModalContent;
+                let data;
+                addModalBtn.addEventListener("click",function(){
+                    let dataArray=[];
+                    let key= addModalDate.value;
+                    addModalContent=document.getElementById("add-content");
+                    data={content:addModalContent.value};
+                    let originalData=JSON.parse(localStorage.getItem(key));
+                    if(originalData!=null){
+                        dataArray=originalData;
+                    }
+                    dataArray.push(data);
+                    localStorage.setItem(key,JSON.stringify(dataArray));
+                    renderCalendar(currentYear,currentMonth);
+                    myAddModal.hide();
+                })
+
+                //刪除按鈕
+                deleteModalBtn.addEventListener("click",function(){                    
+                    let findKey=editDate.value;
+                    console.log(findKey);
+                    let getLocalStorageArray=JSON.parse(localStorage.getItem(findKey));
+                    console.log(getLocalStorageArray);
+                    getLocalStorageArray.splice(currentScheduleIndex,1);
+                    localStorage.setItem(findKey,JSON.stringify(getLocalStorageArray));
+                    renderCalendar(currentYear,currentMonth);
+                    myEditModal.hide();
+                })
+
+                //編輯按鈕
+                editModalBtn.addEventListener("click",function(){
+                    let findKey=editDate.value;
+                    let getLocalStorageArray=JSON.parse(localStorage.getItem(findKey));
+                    let editScheduleItem=editContent.value;
+                    console.log(editScheduleItem);
+                    getLocalStorageArray[currentScheduleIndex].content=editScheduleItem;
+                    localStorage.setItem(findKey,JSON.stringify(getLocalStorageArray));
+                    myEditModal.hide();
+                    renderCalendar(currentYear,currentMonth);
+
+                })
+
+        
+        
+            
+        
+        </script>
+        
+</body>
+
+
+</html>
