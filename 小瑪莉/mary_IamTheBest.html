@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: white;
+            background-image: url(../小瑪莉/backgroundImage.gif);
+            background-size:370px;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+        img{
+            width:100%;
+        }
+
+        i {
+            font-size: 48px;
+        }
+
+        [box-id] {
+            /* width: 80px; */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transform: 0.3s;
+            border: 2px solid black;
+            background-color: bisque;
+        }
+
+        [box-id].active {
+            border: solid 5px red;
+            /* box-shadow: 0 0 10px red; */
+            transition: 0s;
+            border-radius: 10px;
+            background-color: yellow;
+        }
+
+        #msg {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            line-height: 40px;
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            background-color: black;
+        }
+
+        h1 {
+            font-weight: bold;
+            color:white
+        }
+
+        #msg {
+            font-weight: bold;
+        }
+
+        #exampleModalLabel{
+            font-weight: bold;
+            font-size: 25px;
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>你是最胖的-小瑪莉遊戲</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-1" box-id="1"></div>
+            <div class="col-1" box-id="2"></div>
+            <div class="col-1" box-id="3"></div>
+            <div class="col-1" box-id="4"></div>
+            <div class="col-1" box-id="5"></div>
+            <div class="col-1" box-id="6"></div>
+            <div class="col-1" box-id="7"></div>
+            <div class="col-1" box-id="8"></div>
+            <div class="col-1" box-id="9"></div>
+            <div class="col-1" box-id="10"></div>
+            <div class="col-1" box-id="11"></div>
+            <div class="col-1" box-id="12"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="32"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="13"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="31"></div>
+            <div class="col-10"></div>
+            <div class="col-1" box-id="14"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="30"></div>
+            <div class="col-10" id="msg"></div>
+            <div class="col-1" box-id="15"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="29"></div>
+            <div class="col-10">
+                <div class="col-10 justify-content-between d-flex">
+                    <button class="btn btn-dark" id="startBtn">Start</button>
+                </div>
+            </div>
+            <div class="col-1" box-id="16"></div>
+        </div>
+        <div class="row">
+            <div class="col-1" box-id="28"></div>
+            <div class="col-1" box-id="27"></div>
+            <div class="col-1" box-id="26"></div>
+            <div class="col-1" box-id="25"></div>
+            <div class="col-1" box-id="24"></div>
+            <div class="col-1" box-id="23"></div>
+            <div class="col-1" box-id="22"></div>
+            <div class="col-1" box-id="21"></div>
+            <div class="col-1" box-id="20"></div>
+            <div class="col-1" box-id="19"></div>
+            <div class="col-1" box-id="18"></div>
+            <div class="col-1" box-id="17"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_x">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="memeImage">
+                    Modal內容
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //格子的資料
+        let brickData = [{
+            "id": "1",
+            "icon": "../小瑪莉/barbell.png",
+            "meme":"../小瑪莉/減肥.jpg",
+            "target": function () {
+                return "舉30KG啞鈴10分鐘"
+            }
+        },
+        {
+            "id": "2",
+            "icon": "../小瑪莉/bicycle.png",
+            "meme":"../小瑪莉/減肥明天再說.jpg.jpg",
+            "target": function () {
+                return "騎腳踏車往唭哩岸騎"
+            }
+        },
+        {
+            "id": "3",
+            "icon": "../小瑪莉/football.png",
+            "meme":"../小瑪莉/減肥.jpg",
+            "target": function () {
+                return "踢足球5個小時"
+            }
+        },
+        {
+            "id": "4",
+            "icon": "../小瑪莉/hula-hoop.png",
+            "meme":"../小瑪莉/減肥_2.jpg",
+            "target": function () {
+                return "呼拉呼拉圈1小時"
+            }
+        },
+        {
+            "id": "5",
+            "icon": "../小瑪莉/volleyball.png",
+            "meme":"../小瑪莉/減肥_3.jpg",
+
+            "target": function () {
+                return "打排球3小時"
+            }
+        },
+        {
+            "id": "6",
+            "icon": "../小瑪莉/basketball.png",
+            "meme":"../小瑪莉/減肥_4.jpg",
+
+            "target": function () {
+                return "打籃球2小時"
+            }
+        },
+        {
+            "id": "7",
+            "icon": "../小瑪莉/training.png",
+            "meme":"../小瑪莉/減肥_5.jpg",
+
+            "target": function () {
+                return "重訓1小時"
+            }
+        },
+        {
+            "id": "8",
+            "icon": "../小瑪莉/meditation.png",
+            "meme":"../小瑪莉/減肥_6.jpg",
+
+            "target": function () {
+                return "冥想到天亮"
+            }
+        },
+        {
+            "id": "9",
+            "icon": "../小瑪莉/skipping-rope.png",
+            "meme":"../小瑪莉/減肥_7.jpg",
+
+            "target": function () {
+                return "跳繩跳到小腿越來越粗"
+            }
+        },
+        {
+            "id": "10",
+            "icon": "../小瑪莉/running.png",
+            "meme":"../小瑪莉/減肥.jpg",
+
+            "target": function () {
+                return "早上五點起來晨跑"
+            }
+        },
+        {
+            "id": "11",
+            "icon": "../小瑪莉/swimming.png",
+            "meme":"../小瑪莉/減肥明天再說.jpg",
+
+            "target": function () {
+                return "游泳2小時"
+            }
+        },
+        {
+            "id": "12",
+            "icon": "../小瑪莉/sit-up.png",
+            "meme":"../小瑪莉/減肥_8.jpg",
+
+            "target": function () {
+                return "仰臥起坐1小時"
+            }
+        },
+        {
+            "id": "13",
+            "icon": "../小瑪莉/lunges.png",
+            "meme":"../小瑪莉/減肥_9.jpg",
+
+            "target": function () {
+                return "弓箭步開始"
+            }
+        },
+        {
+            "id": "14",
+            "icon": "../小瑪莉/plank.png",
+            "meme":"../小瑪莉/減肥明天再說.jpg",
+
+            "target": function () {
+                return "棒式3分鐘"
+            }
+        },
+        {
+            "id": "15",
+            "icon": "../小瑪莉/tennis-racket.png",
+            "meme":"../小瑪莉/減肥_3.jpg",
+
+            "target": function () {
+                return "網球拍好重"
+            }
+        },
+        {
+            "id": "16",
+            "icon": "../小瑪莉/yoga.png",
+            "meme":"../小瑪莉/減肥_8.jpg",
+
+            "target": function () {
+                return "瑜珈"
+            }
+        },
+        {
+            "id": "17",
+            "icon": "../小瑪莉/meditation.png",
+            "meme":"../小瑪莉/減肥_5.jpg",
+
+            "target": function () {
+                return "冥想到天亮"
+            }
+        },
+        {
+            "id": "18",
+            "icon": "../小瑪莉/yoga.png",
+            "meme":"../小瑪莉/減肥_10.jpg",
+
+            "target": function () {
+                return "瑜珈"
+            }
+        },
+        {
+            "id": "19",
+            "icon": "../小瑪莉/hula-hoop.png",
+            "meme":"../小瑪莉/減肥_7.jpg",
+
+            "target": function () {
+                return "呼拉呼拉圈1小時"
+            }
+        },
+        {
+            "id": "20",
+            "icon": "../小瑪莉/skipping-rope.png",
+            "meme":"../小瑪莉/減肥.jpg",
+
+            "target": function () {
+                return "跳繩跳到小腿越來越粗"
+            }
+        },
+        {
+            "id": "21",
+            "icon": "../小瑪莉/training.png",
+            "meme":"../小瑪莉/減肥_6.jpg",
+
+            "target": function () {
+                return "重訓1小時"
+            }
+        },
+        {
+            "id": "22",
+            "icon": "../小瑪莉/barbell.png",
+            "meme":"../小瑪莉/減肥_4.jpg",
+
+            "target": function () {
+                return "舉30KG啞鈴10分鐘"
+            }
+        },
+        {
+            "id": "23",
+            "icon": "../小瑪莉/swimming.png",
+            "meme":"../小瑪莉/減肥_3.jpg",
+
+            "target": function () {
+                return "游泳2小時"
+            }
+        },
+        {
+            "id": "24",
+            "icon": "../小瑪莉/hula-hoop.png",
+            "meme":"../小瑪莉/減肥_2.jpg",
+
+            "target": function () {
+                return "呼拉呼拉圈1小時"
+            }
+        },
+        {
+            "id": "25",
+            "icon": "../小瑪莉/swimming.png",
+            "meme":"../小瑪莉/減肥_2.jpg",
+
+            "target": function () {
+                return "游泳2小時"
+            }
+        },
+        {
+            "id": "26",
+            "icon": "../小瑪莉/football.png",
+            "meme":"../小瑪莉/減肥明天再說.jpg",
+
+            "target": function () {
+                return "踢足球5個小時"
+            }
+        },
+        {
+            "id": "27",
+            "icon": "../小瑪莉/bicycle.png",
+            "meme":"../小瑪莉/減肥.jpg",
+
+            "target": function () {
+                return "騎腳踏車往唭哩岸騎"
+            }
+        },
+        {
+            "id": "28",
+            "icon": "../小瑪莉/tennis-racket.png",
+            "meme":"../小瑪莉/減肥_4.jpg",
+
+            "target": function () {
+                return "網球拍好重"
+            }
+        },
+        {
+            "id": "29",
+            "icon": "../小瑪莉/bicycle.png",
+            "meme":"../小瑪莉/減肥_5.jpg",
+
+            "target": function () {
+                return "騎腳踏車往唭哩岸騎"
+            }
+        },
+        {
+            "id": "30",
+            "icon": "../小瑪莉/volleyball.png",
+            "meme":"../小瑪莉/減肥_6.jpg",
+
+            "target": function () {
+                return "打排球3小時"
+            }
+        },
+        {
+            "id": "31",
+            "icon": "../小瑪莉/plank.png",
+            "meme":"../小瑪莉/減肥_9.jpg",
+
+            "target": function () {
+                return "棒式3分鐘"
+            }
+        },
+        {
+            "id": "32",
+            "icon": "../小瑪莉/meditation.png",
+            "meme":"../小瑪莉/減肥_8.jpg",
+
+            "target": function () {
+                return "冥想到天亮"
+            }
+        }
+        ]
+
+        // 宣告
+        let steps = 0;
+        let allSteps = 0;
+        let currentIndex = 0;
+        let speed = 0;
+        let bricks = document.querySelectorAll('[box-id]');
+        let closeButton = document.querySelector('#close');
+        let close_XButton=document.querySelector('#close_x');
+        let modal = document.getElementById('exampleModal');
+
+        closeButton.addEventListener('click', function() {
+          $(modal).modal('hide');
+        });
+
+        close_XButton.addEventListener('click', function() {
+          $(modal).modal('hide');
+        });
+
+        bricks = Array.from(bricks).sort((a, b) => {
+            return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value
+        });
+
+        bricks.forEach((x, index) => {
+            let id = index + 1;
+            let data = brickData.find(x => x.id == id)
+            let icon = document.createElement('img');
+            icon.src=data.icon;
+            
+            x.appendChild(icon);
+        })
+
+        // Start Button
+        document.getElementById('startBtn').addEventListener('click', function () {
+            speed = 30;
+            let random = Math.floor(Math.random() * brickData.length) + 1;
+            steps = random + (3 * bricks.length);
+            allSteps = steps;
+            turnAround()
+        })
+
+        function turnAround() {
+            bricks[currentIndex].classList.remove('active');
+            currentIndex++;
+            if (currentIndex >= bricks.length) {
+                currentIndex = 0
+            }
+            bricks[currentIndex].classList.add('active')
+            steps--;
+
+            if (steps > 0) {
+                setTimeout(turnAround, speed);
+                if (steps < Math.floor((allSteps / 3))) {
+                    speed += 7;
+                }
+            } else {
+                let msgBox = document.getElementById('msg')
+                let val = brickData[currentIndex].target();
+                // msgBox.innerText = `恭喜選到${val}`
+
+                let modal = document.getElementById('exampleModal');
+                let modalTitle = modal.querySelector('.modal-title');
+                modalTitle.innerText = `你選到的運動是: ${val}`;
+
+                let modalBody = modal.querySelector('.modal-body');
+                let imgElement = document.createElement('img');
+                imgElement.src =brickData[currentIndex].meme;
+                modalBody.innerHTML = '';
+                modalBody.appendChild(imgElement);
+
+
+                $(modal).modal('show');
+            }
+        }
+    </script>
+</body>
+
+</html>
