@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: rgb(211, 191, 180);
+        }
+
+        #basic-addon1 {
+            background-color: rgb(158, 160, 155);
+            border: 2px solid black;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        #inputData {
+            border: 2px solid black;
+            background-color: rgb(238, 241, 246);
+            font-family: 'Lilita One', cursive;
+
+
+        }
+
+        #checkAns {
+            background-color: rgb(211, 191, 180);
+        }
+        #AddButton{
+            font-weight: bold;
+            background-color:burlywood;
+        }
+
+        .form-check {
+            border: 2px solid gray;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            justify-content: space-between;
+            margin-bottom:10px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+
+        }
+
+        .form-check-label {
+            font-weight: bold;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        #flexCheckDefault {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            margin-right: 10px;
+            margin-left: 10px;
+
+        }
+
+        button:hover {
+            background-color: rgba(134, 196, 198, 0.867);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Lilita One', cursive;
+            font-size: 50px;
+        }
+
+        .check-input {
+            border: 1px solid gray;
+            flex-grow: 1;
+            height: 35px;
+            line-height: 2;
+        }
+        .edit,.delete{
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+        .row{
+            background-color:seashell;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+        }
+        .edit-revise-button{
+            margin-left:10px;
+            margin-right:10px;
+            
+        }
+    </style>
+
+    </style>
+
+    <body>
+
+        <div class="header">
+            <h2>To Do List</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="input-group my-3 ">
+                    <span class="input-group-text" id="basic-addon1">請輸入待辦事項</span>
+                    <input type="text" class="form-control" placeholder="to-do..." aria-label="Username"
+                        aria-describedby="basic-addon1" id="inputData">
+                    <button type="button" id="AddButton">Add</button>
+                </div>
+                <div class="boxItem">
+
+                </div>
+                <!-- 
+            <div class="form-check">
+                <div class="check-input">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Build School期中考
+                    </label>
+                </div>
+                <div class="edit-revise-button">
+                    <button type="button" id="edit">編輯</button>
+                    <button type="button" id="delete">刪除</button>
+                </div>
+            </div> -->
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="editModalLabel">編輯待辦事項</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--內容-->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">待辦事項</span>
+                            <input id="edit-content" type="text" class="form-control" placeholder="" aria-label=""
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="">關閉</button>
+                        <button type="button" class="btn btn-primary" id="revise">修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    </body>
+
+    <script>
+        //宣告Modal
+        let myEditModal = new bootstrap.Modal('#editModal', {
+            keyboard: false
+        })
+
+        //宣告DOM
+        const addItemButton = document.getElementById('AddButton');
+        const userInputData = document.getElementById('inputData');
+        const dataContainer = document.querySelector('.container');
+        const data_row = document.querySelector('.row');
+        const modalEditButton = document.getElementById('revise');
+        const modalContent = document.getElementById('edit-content');
+        let key = '123';
+
+
+        init();
+        //事件註冊
+        addItemButton.addEventListener("click", function () {
+            addDataToLocalStorage(userInputData.value);
+            init();
+            userInputData.value = '';
+        })
+        userInputData.addEventListener("keydown", function (event) {
+            if (event.key == "Enter") {
+                addDataToLocalStorage(userInputData.value);
+                init();
+                userInputData.value = '';
+            }
+        })
+        modalContent.addEventListener("keydown", function (event) {
+            if (event.key == "Enter") {
+                editModalButton();
+                init();
+            }
+        })
+
+
+        //function
+        //動態渲染
+        function renderToDoList(userInput, index, isChecked) {
+            //當按下add button，將使用者輸入的資料以html形式逐一呈現
+            let toDoList = `
+            <div class="check-input">
+                <input name="${index}" class="form-check-input" type="checkbox" value="${index}" id="flexCheckDefault" ${isChecked ? 'checked' : ''}>
+                <label class="form-check-label" for="flexCheckDefault">
+                    ${userInput}
+                </label>
+            </div>
+            <div class="edit-revise-button">
+                <button type="button" class="edit" data-index="${index}">編輯</button>
+                <button type="button" class="delete" data-index="${index}">刪除</button>
+            </div>
+            `;
+
+            let div = document.createElement('div');
+            let boxItem = document.querySelector('.boxItem');
+            div.setAttribute("class", "form-check");
+            div.innerHTML = toDoList;
+            boxItem.append(div);
+            data_row.append(boxItem);
+
+            //在div這個element中找東西
+            let editButton = div.querySelector('.edit');
+            let deleteButton = div.querySelector('.delete');
+            let checkedText = div.querySelector('.form-check-label');
+
+            //畫面的編輯按鈕
+            editButton.addEventListener("click", function (e) {
+                myEditModal.show();
+                // setModal(checkedText.innerText);
+                let currentIndex = e.target.getAttribute('data-index');
+                setModal(checkedText.innerText, currentIndex);
+                console.log(currentIndex);
+
+                //按鈕裡面modal的revise button待辦事項
+                modalEditButton.addEventListener("click", function () {
+                    editModalButton();
+                    init();
+                })
+            });
+
+            deleteButton.addEventListener("click", function (e) {
+                let currentIndex = e.target.getAttribute('data-index');
+                console.log(currentIndex);
+                console.log(key);
+                let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+                console.log(getLocalStorageArray);
+                getLocalStorageArray.splice(currentIndex, 1);
+                localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
+                myEditModal.hide();
+                init();
+            })
+        }
+
+
+        //如果local storage本身就存在資料，在畫面重載或進入時，需要渲染出來
+        function init() {
+            console.log('新增成功')
+
+            let boxItem = document.querySelector('.boxItem');
+            boxItem.innerHTML = ""
+            let findData = JSON.parse(localStorage.getItem(key));
+            console.log(findData);
+            if (findData != null) {
+                console.log('進入成功')
+                Object.entries(findData).forEach((item, index) => {
+                    console.log(item[1].checked);
+                    renderToDoList(item[1].content, item[0], item[1].checked)
+                }
+                )
+            }
+        }
+
+        //localStorage設定
+        //設計key跟value在localstorage的樣子，阿存在ls都會是字串
+        function addDataToLocalStorage(v) {
+            let data = [];
+            let storedData = { content: v, checked: 0 };
+            let originalData = localStorage.getItem(key);
+
+            if (originalData != null) {
+                data = JSON.parse(originalData);
+                console.log(data);
+            }
+            data.push(storedData);
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        //Modal設定
+        function setModal(content, index) {
+            const modalContent = document.getElementById('edit-content');
+            modalEditButton.setAttribute('data-index', index);
+            modalContent.value = content; //設定modal內容的預設值，我放在編輯那個按鈕，打開才需要看到
+        }
+
+        //modal修改按鈕
+        function editModalButton() {
+            let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+            let editScheduleItem = modalContent.value;
+            console.log(editScheduleItem);
+            let currentIndex = parseInt(modalEditButton.getAttribute('data-index'));
+            getLocalStorageArray[currentIndex].content = editScheduleItem;
+            localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
+            myEditModal.hide();
+        }
+
+        //checkbox
+        const checkboxes = document.querySelectorAll('input[type=checkbox]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function (e) {
+                let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+                let currentIndex = checkbox.getAttribute('name');
+                getLocalStorageArray[currentIndex].checked = e.target.checked ? 1 : 0;
+                localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
+            });
+        });
+
+
+    </script>
+
+</html>
