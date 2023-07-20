@@ -188,6 +188,10 @@
         init();
         //事件註冊
         addItemButton.addEventListener("click", function () {
+            if(userInputData.value==''){
+                alert(`請輸入待辦事項`);
+                return;
+            }
             addDataToLocalStorage(userInputData.value);
             init();
             userInputData.value = '';
