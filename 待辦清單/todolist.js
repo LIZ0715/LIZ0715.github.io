@@ -52,8 +52,8 @@ function renderToDoList(userInput, index, isChecked) {
     //當按下add button，將使用者輸入的資料以html形式逐一動態渲染出來
     let toDoList = `
     <div class="check-input">
-        <input name="${index}" class="form-check-input" type="checkbox" value="${index}" id="flexCheckDefault" ${isChecked ? 'checked' : ''}>
-        <label class="form-check-label" for="flexCheckDefault">
+        <input name="${index}" class="form-check-input" type="checkbox" value="${index}" id="${index}" ${isChecked ? 'checked' : ''}>
+        <label class="form-check-label" for="${index}">
             ${userInput}
         </label>
     </div>
