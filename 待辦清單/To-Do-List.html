@@ -17,6 +17,7 @@
 
 <body>
     <style>
+        
         body {
             background-color: rgb(211, 191, 180);
         }
@@ -27,15 +28,12 @@
             font-weight: bold;
             font-size: 20px;
             font-family: 'Noto Sans TC', sans-serif;
-
         }
 
         #inputData {
             border: 2px solid black;
             background-color: rgb(238, 241, 246);
             font-family: 'Lilita One', cursive;
-
-
         }
 
         #checkAns {
@@ -61,7 +59,6 @@
         .form-check-label {
             font-weight: bold;
             font-family: 'Noto Sans TC', sans-serif;
-
         }
 
         #flexCheckDefault {
@@ -70,7 +67,6 @@
             border: 1px solid black;
             margin-right: 10px;
             margin-left: 10px;
-
         }
 
         button:hover {
@@ -94,7 +90,6 @@
         .edit,
         .delete {
             font-family: 'Noto Sans TC', sans-serif;
-
         }
 
         .row {
@@ -106,12 +101,14 @@
         .edit-revise-button {
             margin-left: 10px;
             margin-right: 10px;
-
         }
+        input[type=checkbox]:checked {
+            background-color: #444;
+        }
+
     </style>
 
     <body>
-
         <div class="header">
             <h2>To Do List</h2>
         </div>
@@ -170,177 +167,6 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
     </body>
-
-    <script>
-        //宣告Modal
-        let myEditModal = new bootstrap.Modal('#editModal', {
-            keyboard: false
-        })
-
-        //宣告DOM
-        const addItemButton = document.getElementById('AddButton');
-        const userInputData = document.getElementById('inputData');
-        const dataContainer = document.querySelector('.container');
-        const data_row = document.querySelector('.row');
-        const modalEditButton = document.getElementById('revise');
-        const modalContent = document.getElementById('edit-content');
-        let key = '123';
-
-
-        init();
-        //事件註冊
-        addItemButton.addEventListener("click", function () {
-            if (userInputData.value == '') {
-                alert(`請輸入待辦事項`);
-                return;
-            }
-            addDataToLocalStorage(userInputData.value);
-            init();
-            userInputData.value = '';
-        })
-        userInputData.addEventListener("keydown", function (event) {
-            if (event.key == "Enter") {
-                addDataToLocalStorage(userInputData.value);
-                init();
-                userInputData.value = '';
-            }
-        })
-        modalContent.addEventListener("keydown", function (event) {
-            if (event.key == "Enter") {
-                editModalButton();
-                init();
-            }
-        })
-
-
-        //function
-        //動態渲染
-        function renderToDoList(userInput, index, isChecked) {
-            //當按下add button，將使用者輸入的資料以html形式逐一呈現
-            let toDoList = `
-            <div class="check-input">
-                <input name="${index}" class="form-check-input" type="checkbox" value="${index}" id="flexCheckDefault" ${isChecked ? 'checked' : ''}>
-                <label class="form-check-label" for="flexCheckDefault">
-                    ${userInput}
-                </label>
-            </div>
-            <div class="edit-revise-button">
-                <button type="button" class="edit" data-index="${index}">編輯</button>
-                <button type="button" class="delete" data-index="${index}">刪除</button>
-            </div>
-            `;
-
-            let div = document.createElement('div');
-            let boxItem = document.querySelector('.boxItem');
-            div.setAttribute("class", "form-check");
-            div.innerHTML = toDoList;
-            boxItem.append(div);
-            data_row.append(boxItem);
-
-            //在div這個element中找東西
-            let editButton = div.querySelector('.edit');
-            let deleteButton = div.querySelector('.delete');
-            let checkedText = div.querySelector('.form-check-label');
-
-            //畫面的編輯按鈕
-            editButton.addEventListener("click", function (e) {
-                myEditModal.show();
-                // setModal(checkedText.innerText);
-                let currentIndex = e.target.getAttribute('data-index');
-                setModal(checkedText.innerText, currentIndex);
-                console.log(currentIndex);
-
-                //按鈕裡面modal的revise button待辦事項
-                modalEditButton.addEventListener("click", function () {
-                    editModalButton();
-                    init();
-                })
-            });
-
-            deleteButton.addEventListener("click", function (e) {
-                let currentIndex = e.target.getAttribute('data-index');
-                console.log(currentIndex);
-                console.log(key);
-                let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
-                console.log(getLocalStorageArray);
-                getLocalStorageArray.splice(currentIndex, 1);
-                localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
-                myEditModal.hide();
-                init();
-            })
-        }
-
-
-        //如果local storage本身就存在資料，在畫面重載或進入時，需要渲染出來
-        function init() {
-            console.log('新增成功')
-
-            let boxItem = document.querySelector('.boxItem');
-            boxItem.innerHTML = ""
-            let findData = JSON.parse(localStorage.getItem(key));
-            console.log(findData);
-            if (findData != null) {
-                console.log('進入成功')
-                Object.entries(findData).forEach((item, index) => {
-                    console.log(item[1].checked);
-                    renderToDoList(item[1].content, item[0], item[1].checked)
-                }
-                )
-            }
-            checkboxisCheckOrNot();
-
-        }
-
-        //localStorage設定
-        //設計key跟value在localstorage的樣子，阿存在ls都會是字串
-        function addDataToLocalStorage(v) {
-            let data = [];
-            let storedData = { content: v, checked: 0 };
-            let originalData = localStorage.getItem(key);
-
-            if (originalData != null) {
-                data = JSON.parse(originalData);
-                console.log(data);
-            }
-            data.push(storedData);
-            localStorage.setItem(key, JSON.stringify(data));
-        }
-
-        //Modal設定
-        function setModal(content, index) {
-            const modalContent = document.getElementById('edit-content');
-            modalEditButton.setAttribute('data-index', index);
-            modalContent.value = content; //設定modal內容的預設值，我放在編輯那個按鈕，打開才需要看到
-        }
-
-        //modal修改按鈕
-        function editModalButton() {
-            let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
-            let editScheduleItem = modalContent.value;
-            console.log(editScheduleItem);
-            let currentIndex = parseInt(modalEditButton.getAttribute('data-index'));
-            getLocalStorageArray[currentIndex].content = editScheduleItem;
-            localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
-            myEditModal.hide();
-        }
-
-        //checkbox
-        function checkboxisCheckOrNot() {
-            let checkboxes = document.querySelectorAll('input[type=checkbox]');
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", function (e) {
-                    let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
-                    console.log(getLocalStorageArray);
-                    let currentIndex = checkbox.getAttribute('name');
-                    console.log(currentIndex)
-                    getLocalStorageArray[currentIndex].checked = e.target.checked ? 1 : 0;
-                    localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
-                });
-            });
-
-        }
-
-
-    </script>
+    <script src="./todolist.js"></script>
 
 </html>
