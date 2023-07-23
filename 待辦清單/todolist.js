@@ -11,8 +11,9 @@ const modalEditButton = document.getElementById('revise');
 const modalContent = document.getElementById('edit-content');
 let key = 'LIZ'; //我只有設一個key
 
-init();//先做初始化頁面(重新渲染)
-deleteAndEditButtonEventListeners()//在綁定畫面中所有筆資料上的編輯按鈕及刪除按鈕的監聽事件
+window.onload = function () {
+    init();//先做初始化頁面(重新渲染)
+}
 
 //事件註冊
 //新增按鈕
@@ -54,14 +55,14 @@ modalContent.addEventListener("keydown", function (event) {
 function init() {
     let boxItem = document.querySelector('.boxItem');
     boxItem.innerHTML = ""
-    let findData = JSON.parse(localStorage.getItem(key));
-    if(findData!=null){
-        findData.forEach((item,index)=>{
-            renderToDoList(item.content,index,item.checked)
+    let findData = getLocalStorage(key);
+    if (findData != null) {
+        findData.forEach((item, index) => {
+            renderToDoList(item.content, index, item.checked)
         })
     }
-    checkboxIsCheckOrNot();
     deleteAndEditButtonEventListeners()
+    checkboxIsCheckOrNot();
 }
 //動態渲染畫面 我init()呼叫renderToDoList()
 function renderToDoList(userInput, index, isChecked) {
@@ -85,6 +86,7 @@ function renderToDoList(userInput, index, isChecked) {
     div.innerHTML = toDoList;
     boxItem.append(div);
     data_row.append(boxItem);
+
 }
 
 //delete and edit button addEventListener
@@ -111,9 +113,10 @@ function deleteAndEditButtonEventListeners() {
     deleteButtons.forEach(deleteButton => {
         deleteButton.addEventListener("click", function (e) {
             let currentIndex = e.target.getAttribute('data-index');
-            let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+            let getLocalStorageArray = getLocalStorage(key);
             getLocalStorageArray.splice(currentIndex, 1);
             localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
+            setLocalStorage(key,getLocalStorageArray);
             init();
         });
     });
@@ -123,14 +126,27 @@ function deleteAndEditButtonEventListeners() {
 //設計key跟value在localstorage的樣子，阿存在ls一定都會是字串
 function addDataToLocalStorage(v) {
     let data = [];
-    let storedData = {content: v, checked: 0 }; //設計放在local Storage的樣子，checked預設值都會是0
-    let originalData = localStorage.getItem(key);
+    let storedData = { content: v, checked: 0 }; //設計放在local Storage的樣子，checked預設值都會是0
+    let originalData = getLocalStorage(key);
     //判斷如果ls原本有資料的話，就把原本的資料放進data陣列裡面
     if (originalData != null) {
-        data = JSON.parse(originalData);
+        data =originalData;
     }
     data.push(storedData);//然後把新的資料也放到data陣列後面接續下去
-    localStorage.setItem(key, JSON.stringify(data));//再存進去ls
+    // localStorage.setItem(key, JSON.stringify(data));//再存進去ls
+    setLocalStorage(key,data);
+}
+
+//取得localStorage資料
+function getLocalStorage(key) {
+    //型態為string<----localStorage parse成陣列       
+    //把資料return回呼叫端
+    let data = JSON.parse(localStorage.getItem(key));
+    return data;
+}
+
+function setLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value)) //放字串 做轉型
 }
 
 //Modal input欄位的設定以及修改那顆按鈕的html設定
@@ -142,11 +158,11 @@ function setModal(content, index) {
 
 //modal修改按鈕的要做的事情
 function editModalButton() {
-    let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+    let getLocalStorageArray = getLocalStorage(key);
     let editScheduleItem = modalContent.value; //modalContent.value是使用者要修改的內容值
     let currentIndex = modalEditButton.getAttribute('data-index');//
     getLocalStorageArray[currentIndex].content = editScheduleItem;//把原本的input內容修改為編輯後的內容值
-    localStorage.setItem(key, JSON.stringify(getLocalStorageArray));
+    setLocalStorage(key,getLocalStorageArray);
     myEditModal.hide();
 }
 
@@ -155,13 +171,13 @@ function checkboxIsCheckOrNot() {
     let checkboxes = document.querySelectorAll('input[type=checkbox]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener("click", function (e) {
-            let getLocalStorageArray = JSON.parse(localStorage.getItem(key));
+            let getLocalStorageArray = getLocalStorage(key);
             let currentIndex = checkbox.getAttribute('name');
             //array裡面的checked屬性我設定0或1，來表示是否被勾選，所以我就判斷說如果我點擊的那個box有被打勾的話，原本設定的值就會變1，反之為0
             getLocalStorageArray[currentIndex].checked = e.target.checked ? 1 : 0;
-            console.log(getLocalStorageArray[currentIndex].checked)
-            localStorage.setItem(key, JSON.stringify(getLocalStorageArray));//然後再存進去ls裡面
+            setLocalStorage(key,getLocalStorageArray);
         });
     });
 
 }
+
