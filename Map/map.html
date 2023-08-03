@@ -23,7 +23,7 @@
     body {
         /* background-image: url(./heart.jpg);
          */
-         background-color:rgba(236, 172, 173, 0.307) ;
+        background-color: rgba(236, 172, 173, 0.307);
 
     }
 
@@ -39,6 +39,7 @@
     #updateInfo {
         text-align: end;
         font-size: 10px;
+        border-bottom: 1px solid gray;
     }
 
     #map {
@@ -74,14 +75,26 @@
     .input-group {
         border-radius: 5px;
     }
-
+    .input-group-text{
+        background-color:pink;
+    }
     .title {
         background-color: rgba(247, 247, 247, 0.83);
     }
-    .content{
+
+    .content {
         background-color: white;
     }
 
+    .right-side{
+        background-color: white;
+        margin:10px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+    }
+    #query{
+        border-radius: 5px;
+    }
     @media (min-width: 768px) {
 
         /* 在md及以上的尺寸地圖改為視窗高度 */
@@ -95,11 +108,11 @@
 
 <body>
     <div class="container">
-        <div class="row ">
+        <div class="row">
             <div class="col-12 col-md-6 py-3 " id="content">
                 <div id="map" class=""></div>
             </div>
-            <div class="col-12 col-md-6 py-3">
+            <div class="col-12 col-md-6 py-3 right-side">
                 <div>
                     <h2> 高雄市社區照顧關懷據點 <i class="fa-solid fa-heart" style="color: #ee4949;"></i></h2>
                     <p id="updateInfo">最後更新時間: 2021/08/20 12:00:00</p>
@@ -113,7 +126,8 @@
 
                         <input type="text" class="form-control" placeholder="Enter a keyword..." aria-label=""
                             aria-describedby="basic-addon2" id="input">
-                        <button type="button" class="btn btn-dark fw-bolder" id="query">Search<i class="fa-solid fa-heart" style="color: #ee4949;"></i></button>
+                        <button type="button" class="btn btn-dark fw-bolder" id="query">Search<i
+                                class="fa-solid fa-heart" style="color: #ee4949;"></i></button>
 
                     </div>
                 </div>
@@ -121,19 +135,20 @@
                 <div id="queryResult">
 
                     <!-- <div class="col-12 d-flex text-center">
-                        <div class="col-3 p-1"><strong>地點</strong></div>
-                        <div class="col-3 p-1"><strong>地址</strong></div>
-                        <div class="col-2 p-1"><strong></strong></div>
-                    </div>
-                    <div class="col-12 d-flex">
-                        <div class="col-3 p-1">YouBike2.0_國北教大實小東側門</div>
-                        <div class="col-3 p-1">大安區和平東路二段96巷7號</div>
-                        <div class="col-2 p-1 text-end">
-                        <button type="button" class="btn btn-outline-dark">地圖</button>
+                            <div class="col-3 p-1"><strong>地點</strong></div>
+                            <div class="col-3 p-1"><strong>地址</strong></div>
+                            <div class="col-2 p-1"><strong></strong></div>
                         </div>
-                    </div> -->
+                        <div class="col-12 d-flex">
+                            <div class="col-3 p-1">YouBike2.0_國北教大實小東側門</div>
+                            <div class="col-3 p-1">大安區和平東路二段96巷7號</div>
+                            <div class="col-2 p-1 text-end">
+                            <button type="button" class="btn btn-outline-dark">地圖</button>
+                            </div>
+                        </div> -->
 
                 </div>
+
             </div>
         </div>
     </div>
@@ -160,9 +175,9 @@
         const inputDom = document.querySelector('#input')
         const queryBtn = document.querySelector('#query')
         const queryResultDOM = document.querySelector('#queryResult')
-        const backButtonDOM=document.querySelector('.back');
+        const backButtonDOM = document.querySelector('.back');
 
- 
+
         window.onload = function () {
             try {
 
@@ -184,7 +199,7 @@
         }
 
 
-        backButtonDOM.addEventListener("click",function(){
+        backButtonDOM.addEventListener("click", function () {
             location.reload();
         })
 
@@ -207,22 +222,22 @@
 
         //查詢加上監聽事件
         queryBtn.addEventListener("click", function () {
-       
+
             queryButtonNeedToDo();
         })
 
-        queryBtn.addEventListener("keydown",function(event){
-            if(event.key=="Enter"){
+        queryBtn.addEventListener("keydown", function (event) {
+            if (event.key == "Enter") {
                 queryButtonNeedToDo();
             }
         })
-        inputDom.addEventListener("keydown",function(event){
-            if(event.key=="Enter"){
+        inputDom.addEventListener("keydown", function (event) {
+            if (event.key == "Enter") {
                 queryButtonNeedToDo();
             }
         })
 
-        function queryButtonNeedToDo(){
+        function queryButtonNeedToDo() {
             // if (!inputDom.value.trim()) { //判斷如果使用者輸入的是空值的話，就會跳出alert提醒!
             //     // alert(`請輸入關鍵字`);
             //     // return;
@@ -255,7 +270,7 @@
             } else {
                 query();
                 if (filterData == '') {
-                    str+=
+                    str +=
                         `<div class="col-12 d-flex text-center content">
                         <div class="col-12 border border-black"><strong>查無資料</strong></div>
                 </div>
@@ -289,7 +304,7 @@
             if (inputDom.value) {
                 query();
             }
-            inputDom.value="";
+            inputDom.value = "";
         }
 
         let filterData;
@@ -418,4 +433,5 @@
         }
     </script>
 </body>
+
 </html>
