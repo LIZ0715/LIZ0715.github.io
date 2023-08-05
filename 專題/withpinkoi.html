@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="second.css">
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div class="banner">
+        <img src="./開館2banner.jpg" alt="">
+    </div>
+    <div class="description">
+        <p>歡迎你！Pinkoi 是亞洲領先的設計商品購物網站，我們期待眾多優秀品牌的加入，與 Pinkoi 一起將商品販售至世界各地，用好設計實現更多人的美感生活。為了確保商品符合 Pinkoi
+            商品販售政策，我們會審核所有開館申請。以下問題大約可在 10 分鐘左右完成填寫，感謝你抽出時間與我們分享你的品牌！
+        </p>
+        <p class="reference">
+            想知道如何加速成功開館嗎？歡迎參考<a href="#">第一次申請設計館就上手</a>
+        </p>
+    </div>
+    <div class="user-input">
+        <div class="user-name">
+            <div class="name">
+                <div class="title">申請人姓名</div>
+                <div class="label-description">
+                    請填寫品牌負責人或主要聯絡人姓名
+                </div>
+            </div>
+            <div class="name-text-field">
+                <label class="form-input-wrapper w-100">
+                    <input type="text" id="applyerName" name="applyerName" value>
+                </label>
+            </div>
+        </div>
+        <div class="user-phone my-3">
+            <div class="phone">
+                <div class="title">手機號碼</div>
+                <div class="div d-flex align-items-center">
+                    <div class="select me-2">
+                        <select class="p-1">
+                            <option value="+1">+886</option>
+                            <option value="+1">+1</option>
+                        </select>
+                    </div>
+                    <input type="tel" placeholder="0900000000">
+                </div>
+
+            </div>
+        </div>
+        <div class="applyer-brand-name my-3">
+            <div class="brand-name">
+                <div class="title">品牌名稱(設計館名稱)</div>
+
+                <div class="label-description">
+                    這會成為你的 Pinkoi 設計館名稱，取個易讀好懂的品牌名稱吧
+                </div>
+            </div>
+            <div class="name-text-field">
+                <label class="form-input-wrapper w-100">
+                    <input type="text" id="applyerBrandName" name="applyerBrandName" value>
+                </label>
+            </div>
+        </div>
+        <div class="applyer-account my-3">
+            <div class="account">
+                <div class="title">設計館帳號</div>
+
+                <div class="label-description">
+                    給你的設計館取個註冊帳號吧！此帳號將用於登入 Pinkoi 設計館，也會直接成為你設計館的網址（如 pinkoi.com/xxxx )。建議使用品牌英文名稱，不要使用個人姓名帳號。
+                    <span class="highlight">帳號申請通過後不能修改，請確認已正確填寫喔！</span>
+                </div>
+            </div>
+            <div class="account-text-field">
+                <label class="form-input-wrapper w-100">
+                    <input type="text" id="account" name="account" value>
+                </label>
+                <div class="label-description">20 字以內，只能使用小寫英文、數字及中線符號（-），不可含空格或其他符號</div>
+            </div>
+        </div>
+
+        <div class="applyer-contact-email my-3">
+            <div class="contact">
+                <div class="title"> 聯絡 Email</div>
+
+                <div class="label-description">
+                    申請結果會寄送至此 Email，請確認已正確填寫。建議以 Gmail 作為聯絡信箱較不容易漏信喔
+                </div>
+            </div>
+            <div class="email-text-field">
+                <label class="form-input-wrapper w-100">
+                    <input type="text" id="email" name="email" value>
+                </label>
+            </div>
+        </div>
+        <div class="how-do-you-know-pinkoi my-3">
+            <div class="findUs">
+                <div class="title">你是怎麼知道 Pinkoi 的呢？
+                </div>
+            </div>
+            <div class="invitation my-3">
+                <div class="form-check d-flex align-items-center">
+                    <div class="">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label me-2" for="flexCheckDefault">
+                            收到Pinkoi的開館邀請
+                        </label>
+                    </div>
+
+                    <input class="" placeholder="品牌顧問名稱" type="text" id="brandConsultantName" name="brandConsultantName"
+                        value>
+                </div>
+            </div>
+            <div class="activities my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        參與 Pinkoi 招募會及其他主題講座
+                    </label>
+                </div>
+            </div>
+            <div class="recommendation my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        親友推薦或自己了解到的
+                    </label>
+                </div>
+            </div>
+            <div class="invitation my-3">
+                <div class="form-check d-flex align-items-center">
+                    <div class="">
+                        <input class="form-check-input"  type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label me-2" for="flexCheckDefault">
+                            由Pinkoi已開館品管介紹
+                        </label>
+                    </div>
+
+                    <input class="" placeholder="設計館名稱或連結" type="text" id="brandConsultantName" name="brandConsultantName"
+                        value>
+                </div>
+            </div>
+            <div class="invitation my-3">
+                <div class="form-check d-flex align-items-center">
+                    <div class="">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label me-2" for="flexCheckDefault">
+                            已在Pinkoi經營其他設計館
+                        </label>
+                    </div>
+
+                    <input class="" placeholder="設計館名稱或連結" type="text" id="brandConsultantName" name="brandConsultantName"
+                        value>
+                </div>
+            </div>
+            <div class="ad-google my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        看到Google關鍵字招募廣告
+                    </label>
+                </div>
+            </div>
+            <div class="ad-fb my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        看到Facebook關鍵字招募廣告
+                    </label>
+                </div>
+            </div>
+            <div class="ad-ig my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        看到Instagram關鍵字招募廣告
+                    </label>
+                </div>
+            </div>
+            <div class="other my-3">
+                <div class="form-check d-flex align-items-center">
+                    <div class="">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                    <input class="" placeholder="其他" type="text" id="brandConsultantName" name="brandConsultantName"
+                        value>
+                </div>
+            </div>
+        </div>
+        <div class="identity my-3">
+            <div class="title">你是以下哪種身分呢?</div>
+            <div class="alone my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        獨立設計師
+                    </label>
+                </div>
+            </div>
+            <div class="amateur my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        業餘設計師（我還有其它正職工作）
+                    </label>
+                </div>
+            </div>
+            <div class="workshop my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        設計工作室 / 公司行號
+                    </label>
+                </div>
+            </div>
+            <div class="onebrandagent my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        單一品牌（獨家）代理商 / 經銷商
+                    </label>
+                </div>
+            </div>
+            <div class="multibrandagent my-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        多個品牌（獨家）代理商 / 經銷商
+                    </label>
+                </div>
+            </div>
+            <div class="others my-3">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input placeholder="其他" type="text" id="other" name="other" value>
+                </div>
+            </div>
+        </div>
+
+        <div class="category my-3">
+            <div class="title">你要販售的商品屬於以下哪個類別呢?</div>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                實體或數位商品
+            </label>
+            <div class="input-inner ms-3 my-3">
+                <div class="original my-1">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        原創商品:由設計師本人(或團隊)親自發想、設計
+                    </label>
+                </div>
+
+                <div class="authorize my-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        授權販售：得到原廠品牌或商品原創者書面授權或擁有其他合法權源
+                    </label>
+                </div>
+
+                <div class="old my-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        古董老件：歷經數十年以上時間淬練，狀況良好且數量有限的古董、古著或物品
+                    </label>
+                </div>
+            </div>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                體驗活動:獨特且具備好品質的體驗活動
+            </label>
+            <p class="label-description my-2">在 Pinkoi 上架販售的體驗活動不可為免費活動、特賣會或兌換贈品等促銷活動。舉辦形式不限「實體」或「線上」，範例請參考 <a
+                    href="#">Pinkoi 質感體驗</a> </p>
+        </div>
+
+        <div class="product-category">
+            <div class="categories">
+                <div class="title">計畫在 Pinkoi 販售的商品分類</div>
+                <div class="label-description">
+                    可選擇多個商品分類，各分類下的細項可在 Pinkoi 首頁查看
+                </div>
+            </div>
+            <div class="invitation ">
+                <div class="form-check d-flex flex-wrap">
+                    <div class="clothe col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            衣著良品
+                        </label>
+                    </div>
+                    <div class="bag col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            包包提袋
+                        </label>
+                    </div>
+                    <div class="accessories col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            配件飾品
+                        </label>
+                    </div>
+                    <div class="Stationery col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            文具卡片
+                        </label>
+                    </div>
+                    <div class="baby col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            媽咪寶寶
+                        </label>
+                    </div>
+                    <div class="home col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            居家生活
+                        </label>
+                    </div>
+                    <div class="pet col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            寵物用品
+                        </label>
+                    </div>
+                    <div class="DIY col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            DIY材料
+                        </label>
+                    </div>
+                    <div class="sport col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            運動休閒
+                        </label>
+                    </div>
+                    <div class="food col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            品味美食
+                        </label>
+                    </div>
+                    <div class="=tech col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            創意科技
+                        </label>
+                    </div>
+                    <div class="shoes col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            鞋履襪品
+                        </label>
+                    </div>
+                    <div class="kitchen col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            廚房餐桌
+                        </label>
+                    </div>
+                    <div class="cosmetic col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            美妝保養
+                        </label>
+                    </div>
+                    <div class="experience col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            體驗活動
+                        </label>
+                    </div>
+                    <div class="fundraising col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            群眾募資
+                        </label>
+                    </div>
+                    <div class="digit col-4 col-md-3 my-1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            數位創作
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="place my-3">
+            <div class="categories">
+                <div class="title">商品出貨地點/體驗活動舉辦地</div>
+                <div class="label-description">
+                    請填寫商品會從哪裡寄出或體驗活動在哪裡舉辦，這會影響你的設計館所在地及相關設定
+                </div>
+            </div>
+            <div class="user-choose ">
+                <div class="btn-group d-flex">
+                    <select class="dropdown" aria-labelledby="defaultDropdown">
+                      <option>台灣</option>
+                      <option>日本</option>
+                      <option>韓國</option>
+                    </select>
+                  </div>
+                  
+            </div>
+        </div>
+        <div class="city my-3">
+            <div class="categories">
+                <div class="title">商品產地/體驗活動舉辦縣市</div>
+                <div class="label-description">
+                    請填寫商品是在哪裡生產的，品牌代理商請填寫原品牌的產地（如：台灣設計中國大陸製，請填寫中國大陸）；體驗活動請填寫活動舉辦縣市
+                </div>
+            </div>
+            <input placeholder="" type="text" id="other" name="other" value>
+        </div>
+        <div class="revenue my-3">
+            <div class="money">
+                <div class="title">品牌年營業額</div>
+            </div>
+            <div class="50w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    50萬以下
+                </label>
+            </div>
+            <div class="50-100w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    50~100萬
+                </label>
+            </div>
+            <div class="100-300w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    100~300萬
+                </label>
+            </div>
+            <div class="300-500w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    300~500萬
+                </label>
+            </div>
+            <div class="500-1000w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    500~1000萬
+                </label>
+            </div>
+            <div class="1000w  my-3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    1000萬以上
+                </label>
+            </div>
+        </div>
+        <div class="url my-3">
+            <div class="money">
+                <div class="title">品牌的社群媒體、通路連結或實體活動經驗</div>
+            </div>
+            <div class="label-description">
+                歡迎提供品牌社群連結（如 Facebook、Instagram 等）或官網及其他通路連結（如 PChome、Etsy 等）給我們參考；如品牌有參與實體市集的經驗，請一併提供相關連結，會是審核重要評估的項目之一。
+            </div>
+            <input placeholder="http(s)://" type="text" id="other" name="other" value>
+        </div>
+
+        <div class="brand-introduction my-3">
+            <div class="intro">
+                <div class="title">品牌簡介</div>
+            </div>
+            <div class="label-description">
+                來與我們分享你的品牌和商品特色吧。請重點介紹你的設計理念及過程、商品亮點及品牌故事。其他想對 Pinkoi 說的話，也歡迎告訴我們！
+            </div>
+            <textarea id="subject" name="subject" placeholder="請填寫不超過500字" style="height:200px"></textarea>
+        </div>
+
+        <div class="photo my-3">
+            <div class="intro">
+                <div class="title">請提供 5 張可直接上架的商品 / 體驗活動照片</div>
+            </div>
+            <div class="label-description">
+                請提供可清晰瀏覽的商品實拍照。照片勿後製上 logo、文字；請勿過度使用濾鏡、合成圖片或讓商品失焦。請提供解析度 72dpi 以上的 JPG 或 PNG 圖檔，不符合規格的圖檔將無法上傳            </div>
+                <label for="file-input" class="custom-file-input">
+                    <span class="upload-photo btn btn-outline-secondary">上傳照片</span>
+                  </label>
+                <input type="file" id="file-input" style="display: none;"> 
+            </div>
+            <div class="confirm-part my-5">
+                <div class="d-flex">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        我已閱讀<a href="#">Pinkoi 商品販售政策</a>並確認我的商品屬於可販售的類別
+                    </label>
+                </div>
+                <div class="d-flex">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        我已了解並同意<a href="#">Pinkoi 的合作及收費方式</a>
+                    </label>
+                </div>
+            </div>
+            <div class="preview-form d-flex justify-content-center">
+                <a class="btn btn-primary" >預覽申請表</a>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
