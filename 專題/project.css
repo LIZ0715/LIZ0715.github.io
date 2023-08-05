@@ -3,29 +3,34 @@
 }
 
 .banner {
+    max-width: 100%;
     margin-top: 100px;
     background-image: url("./banner.jpg");
     background-size: cover;
     height: 700px;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.logo-container .logo{
+    display: none;
+}
+.header-name{
+    display: none;
+}
+.logo-s{
+    max-width:40px;
+    border-radius: 5px;
+    margin-left:10px;
+}
+.open-store-button .btn{
+    margin-right:10px;
 }
 
-.logo {
-    max-width: 150px;
-    margin-right: 10px;
+.nav-scroller {
+    max-width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
-
-.header-name {
-    margin: 0;
-}
-
-/* .open-store-button {
-    margin-right: 30px;
-} */
 
 a {
     text-decoration: none;
@@ -70,8 +75,92 @@ a:visited {
 .immediately_open_store_button a {
     padding: 5px 60px;
 }
+.carousel{
+    display:none;
+}
+.small-story{
+    display: block;
+}
 
-@media screen and (min-width: 960px) {
+.small-story .card{
+    /* outline:1px solid red; */
+    max-width:300px;
+    margin:auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+}
+.small-story .card .img {
+    max-height: 100%;
+    width: auto;
+}
+
+.small-story .card img {
+    object-fit: cover; /* 調整填充方式，保持比例並填滿容器 */
+    width: 100%;
+    height: 100px;
+}
+
+.small-story-card {
+    display: flex;
+    overflow-x: auto; /* 添加水平滾動條 */
+    gap: 10px; /* 卡片之間的間隔 */
+    padding: 20px; /* 可以根據需要調整內容和容器的間距 */
+}
+
+.small-story .card {
+    flex: 0 0 auto; /* 讓卡片的寬度保持固定，不自動拉伸 */
+    width: 300px; /* 調整卡片的寬度 */
+}
+/* 調整水平卷軸外觀 */
+.small-story::-webkit-scrollbar {
+    width: 10px; /* 卷軸寬度 */
+    height:5px;
+}
+
+.small-story::-webkit-scrollbar-thumb {
+    background-color: #888; /* 卷軸滑塊的背景色 */
+}
+
+/* 調整垂直卷軸外觀 */
+.small-story::-webkit-scrollbar-vertical {
+    width: 10px; /* 卷軸寬度 */
+}
+
+.small-story::-webkit-scrollbar-thumb {
+    background-color: #888; /* 卷軸滑塊的背景色 */
+}
+
+/* 隱藏卷軸軌道 */
+.small-story::-webkit-scrollbar-track {
+    display: none;
+}
+
+
+@media (min-width:768px){
+    .logo-s{
+        display: none;
+    }
+    .top-header{
+        display:flex;
+        justify-content: space-around;
+    }
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    .logo-container .logo {
+        display: block;
+        max-width: 200px;
+        margin-right: 10px;
+    }
+    .header-name {
+        display:block;
+        margin: 0;
+    }
+}
+
+
+@media screen and (min-width:768px) {
     .slogan_eng h1 {
         color: #fff;
         font-size: 60px;
@@ -130,54 +219,63 @@ a:visited {
     width: 100%;
 }
 
+@media (min-width: 768px){
+    .carousel{
+        display:block;
+    }
 
-.carousel {
-    background-color: rgba(239, 247, 253, .5);
-}
-#carouselExampleIndicators{
-    max-width: 800px;
-    margin:auto;
+    .small-story{
+        display: none;
+    }
+    .carousel {
+        background-color: rgba(239, 247, 253, .5);
+    }
+    #carouselExampleIndicators{
+        max-width: 800px;
+        margin:auto;
+    }
+    
+    .carousel-indicators{
+        margin-bottom:90px;
+    }
+    
+    .carousel-item {
+        background-color: #fff;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .carousel-control-next{
+        margin-right:-40px;
+    }
+    .carousel-control-prev-icon::before,
+    .carousel-control-next-icon::before {
+        content: '\2039';
+        font-size: 20px;
+    }
+    
+    .carousel-control-next-icon::before {
+        content: '\203a';
+    }
+    
+    .carousel {
+        padding: 72px 0;
+    }
+    
+    .carousel-inner .content {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    }
 }
 
-.carousel-indicators{
-    margin-bottom:90px;
-}
-
-.carousel-item {
-    background-color: #fff;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-.carousel-control-next{
-    margin-right:-40px;
-}
-.carousel-control-prev-icon::before,
-.carousel-control-next-icon::before {
-    content: '\2039';
-    font-size: 20px;
-}
-
-.carousel-control-next-icon::before {
-    content: '\203a';
-}
-
-.carousel {
-    padding: 72px 0;
-}
-
-.carousel-inner .content {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
-}
 
 .product-can-sell-items img {
     width: 100%;
@@ -204,11 +302,8 @@ ul li {
 
     .product-can-sell-items .item {
         width:20%;
-        
     }
 
-
-    
     .product-can-sell-items ul {
         margin-left: -30px;
     }
@@ -250,7 +345,9 @@ ul li {
     flex-wrap: wrap;
     justify-content: center;
 }
-@media (min-width:960px){
+
+
+@media (min-width:768px){
     .pic-items{
         gap:10px;
     }
@@ -266,6 +363,7 @@ ul li {
     width: 100%;
 }
 
+
 .nav-scroller ul {
     display: block;
 }
@@ -275,6 +373,7 @@ ul li {
 }
 
 .nav-scroller {
+    overflow: hidden;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -284,8 +383,11 @@ ul li {
     display: block;
     padding: 0px 14px;
 }
-
-.card-body {
+.card{
+    border:none;
+}
+.card-body{
+    /* border:none; */
     display: flex;
     justify-content: center;
 }
@@ -298,7 +400,7 @@ ul li {
     font-size: 20px;
 }
 
-@media (min-width:960px) {
+@media (min-width:768px) {
     .brand-can-get .card {
         display: flex;
         flex-direction: row;
@@ -335,7 +437,7 @@ ul li {
     display: none;
 }
 
-@media (min-width:960px) {
+@media (min-width:768px) {
 
     /*     
     .why-head-pic{
@@ -359,7 +461,7 @@ ul li {
 }
 
 
-@media (min-width: 960px) {
+@media (min-width: 768px) {
     .nav-scroller ul {
         display: block;
         text-align: center;
@@ -427,7 +529,7 @@ ul li {
 .arrow{
     border-color:#fff transparent transparent;
     border-style:solid;
-    border-width:127px  268px 0;
+    border-width:127px  206px 0;
     bottom:0;
     height:0;
     left:50%;
@@ -436,6 +538,7 @@ ul li {
     width:0;
 } 
 .join{
+    
     background-color: #003354;
     color:#fff;
     overflow: visible;
@@ -444,7 +547,7 @@ ul li {
     text-align: center;
     z-index:-1;
 }
-@media(min-width:960px){
+@media(min-width:768px){
     .arrow{
         border-color:#fff transparent transparent;
         border-style:solid;
@@ -467,7 +570,7 @@ ul li {
     }
    
 }
-@media(min-width:1024px){
+@media(min-width:768px){
     .join-pinkoi{
         max-width: 100%;
         margin-top:20px;
@@ -546,12 +649,19 @@ i{
 .header{
     background-color: #fff;
     position:fixed;
+    overflow: hidden;
     top:0px;
-    width:100%;
+    max-width:100%;
     z-index:999;
     border-bottom: 1px solid gray;
 }
+.top-header{
+    display:flex;
+    justify-content: space-between;
+    margin:10px 0px;
+}
 
+  
 .self,
 .with-pinkoi{
     border:0;
@@ -559,7 +669,7 @@ i{
     font-weight: 600;
     margin:0;
     padding:14px 5px;
-    width:267px;
+    
 }
 .pinkoi-provide{
     background: hsla(6,84%,65%,.1);
@@ -569,7 +679,7 @@ i{
     background-color: #f7f7f8;
     padding:24px;
 }
-@media(min-width:960px){
+@media(min-width:768px){
     .self,
     .with-pinkoi{
         border:0;
@@ -634,23 +744,7 @@ i{
     background-color: #f7f7f8;
     /* max-width: 800px; */
 }
-/* .calc-method{
-    justify-content: space-between;
 
-} */
-/* .form-control{
-    margin:auto
-} */
-/* .calc {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-   */
-
-/* .form-control{
-    margin:0 10px;
-} */
 .form-control,
 .calc-btn{
     display:flex;
@@ -662,3 +756,4 @@ i{
 .fee-detail-calc{
     background-color: #e5e5e6;
 }
+
