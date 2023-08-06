@@ -1,7 +1,25 @@
+body{
+    color:#39393e;
+}
 .group {
     max-width: 100%;
 }
 
+.card-body .content li{
+    list-style: none;
+    padding-left:1em;
+    text-indent:-1em;
+}
+.card-body .content li::before{
+    content:'';
+    display:inline-block;
+    width:1em;
+    height:1em;
+    background-color: black;
+    vertical-align: middle;
+    transform: scale(0.3);
+    border-radius: 50%;
+}
 .banner {
     max-width: 100%;
     margin-top: 100px;
@@ -45,14 +63,6 @@ a:visited {
     background-color: #10567b;
     border-color:#10567b;
 }
-/* .btn {
-    background-color: #10567b;
-    border: 1px solid #10567b;
-} */
-
-/* .btn:hover {
-    background-color: #164e6c;
-} */
 
 .slogan_eng h1 {
     color: #fff;
@@ -95,48 +105,46 @@ a:visited {
 }
 
 .small-story .card img {
-    object-fit: cover; /* 調整填充方式，保持比例並填滿容器 */
+    object-fit: cover; 
     width: 100%;
     height: 100px;
 }
 
 .small-story-card {
     display: flex;
-    overflow-x: auto; /* 添加水平滾動條 */
-    gap: 10px; /* 卡片之間的間隔 */
-    padding: 20px; /* 可以根據需要調整內容和容器的間距 */
+    overflow-x: auto; 
+    gap: 10px; 
+    padding: 20px; 
 }
 
 .small-story .card {
-    flex: 0 0 auto; /* 讓卡片的寬度保持固定，不自動拉伸 */
-    width: 300px; /* 調整卡片的寬度 */
+    flex: 0 0 auto; 
+    width: 300px; 
 }
-/* 調整水平卷軸外觀 */
 .small-story::-webkit-scrollbar {
-    width: 10px; /* 卷軸寬度 */
+    width: 10px;
     height:5px;
 }
 
 .small-story::-webkit-scrollbar-thumb {
-    background-color: #888; /* 卷軸滑塊的背景色 */
+    background-color: #888; 
 }
 
-/* 調整垂直卷軸外觀 */
 .small-story::-webkit-scrollbar-vertical {
-    width: 10px; /* 卷軸寬度 */
+    width: 10px; 
 }
 
 .small-story::-webkit-scrollbar-thumb {
-    background-color: #888; /* 卷軸滑塊的背景色 */
+    background-color: #888;
 }
 
-/* 隱藏卷軸軌道 */
 .small-story::-webkit-scrollbar-track {
     display: none;
 }
 
 
 @media (min-width:768px){
+    
     .logo-s{
         display: none;
     }
@@ -286,7 +294,25 @@ ul li {
 .product-can-sell-items .item{
     padding:20px;
 }
-@media (min-width:768px) {
+.product-can-sell ul li{
+    margin-left:-30px;
+}
+
+.product-can-sell-items .item ul li:first-child {
+    background: url(./ic_ok.svg) no-repeat 0 0;
+    background-size: 24px 24px;
+}
+
+.product-can-sell-items .item ul li {
+    margin-bottom: 10px;
+    padding-left: 2rem;
+}
+
+.product-can-sell-items .item ul li:last-child {
+    background: url(./ic_nok.svg) no-repeat 0 0;
+    background-size: 24px 24px;
+}
+@media (min-width:821px) {
     .product-can-sell-items{
         display:flex;
         gap:40px;
@@ -298,14 +324,12 @@ ul li {
         margin: auto;
     }
 
-   
-
     .product-can-sell-items .item {
         width:20%;
     }
 
     .product-can-sell-items ul {
-        margin-left: -30px;
+        /* margin-left: -10px; */
     }
 
     .product-can-sell-items .item ul li:first-child {
@@ -400,7 +424,7 @@ ul li {
     font-size: 20px;
 }
 
-@media (min-width:768px) {
+@media (min-width:769px) {
     .brand-can-get .card {
         display: flex;
         flex-direction: row;
@@ -408,9 +432,13 @@ ul li {
         border: none;
     }
 
-    .card-img {
-        width: 700px;
+    .card-img_ {
+        width: 50%;
+        display: flex;
+        align-items: center;
     }
+   
+
 
     .card-body {
         display: flex;
@@ -418,17 +446,7 @@ ul li {
         justify-content: center;
     }
 
-    .card-img {
-        width: 700px;
-    }
-
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .card:nth-of-type(odd) .card-img {
+    .card:nth-of-type(odd) .card-img_ {
         order: 1;
     }
 }
@@ -486,17 +504,7 @@ ul li {
         color: #064162;
     }
 }
-/* .arrow{
-    border-color:#fff transparent transparent;
-    border-style:solid;
-    border-width:124px 570px 0;
-    bottom:0;
-    height:0;
-    left:50%;
-    position:absolute;
-    transform: translateX(-50%);
-    width:0;
-} */
+
 .join-pinkoi-content{
     background-color: #003354;
     text-align:center;
@@ -529,7 +537,7 @@ ul li {
 .arrow{
     border-color:#fff transparent transparent;
     border-style:solid;
-    border-width:127px  206px 0;
+    border-width:127px  189px 0;
     bottom:0;
     height:0;
     left:50%;
@@ -551,7 +559,7 @@ ul li {
     .arrow{
         border-color:#fff transparent transparent;
         border-style:solid;
-        border-width:124px  630px 0;
+        /* border-width:135px  400px 0; */
         bottom:0;
         height:0;
         left:50%;
@@ -594,12 +602,43 @@ ul li {
 .QandA .text-group{
     padding-top:50px;
 }
-
 .design-the-way-you-are{
     margin:auto;
     max-width: 100%;
     overflow: visible;
     background-color: #e5e5e6;
+}
+.design-the-way-you-are .text h1{
+    color:#003354;
+    font-style: italic;
+    font-weight: 900;
+    text-align: center;
+    font-size: 15px;
+}
+.footer-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text_,.story_{
+    display:none;
+}
+@media (min-width:768px){
+    .text_,.story_{
+        display:block;
+    }
+    .text-story{
+        display:none;
+    }
+    .design-the-way-you-are .text_{
+        color:#003354;
+        font-style: italic;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    
 }
 
 .more-info-button{
@@ -608,15 +647,10 @@ ul li {
 }
 .more-info-button .btn{
     background-color: white;
+    border:1px solid black;
 }
 .more-info-button .btn:hover{
     border:1px solid black;
-}
-.design-the-way-you-are .text{
-    color:#003354;
-    font-style: italic;
-    font-weight: 900;
-    text-align: center;
 }
 
 .icon-list {
@@ -637,12 +671,7 @@ i{
     font-size: 15px;
     color:white;
 }
-.footer-container{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .pinkoi-img img{
     max-width:150px;
 }
