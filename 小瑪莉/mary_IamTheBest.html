@@ -89,6 +89,16 @@
         }
         
     </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EK43DDL2JT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EK43DDL2JT');
+</script>
 </head>
 
 <body>
@@ -485,13 +495,13 @@
         bricks = Array.from(bricks).sort((a, b) => {
             return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value
         });
+        console.log(bricks);
 
         bricks.forEach((x, index) => {
             let id = index + 1;
             let data = brickData.find(x => x.id == id)
             let icon = document.createElement('img');
             icon.src=data.icon;
-            
             x.appendChild(icon);
         })
 
